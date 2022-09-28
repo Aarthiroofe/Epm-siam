@@ -5,6 +5,7 @@
   background-position: center;
    background-repeat: no-repeat;
    color: white;
+
 }
 .menulogo{
   height: 90px;
@@ -42,6 +43,7 @@
   cursor: pointer;
 }
 @media(max-width:768px){
+  
   .menuitems{
     margin-top: 4rem;
     justify-content: space-around;
@@ -69,4 +71,52 @@ mat-form-field{
 ::placeholder{
   font-size: large;
   color: rgb(43, 42, 42);
+}
+
+.right{
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 7px;
+  height: 100%;
+  margin: 0% 5% 0% 15%;
+}
+.rightcontent{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50%;
+}
+.right h1{
+    margin-left: 8%;
+    margin-top: 2%;
+}
+
+@media (min-width:200px)and (max-width:768px){
+  .right{
+    height: auto;
+  }
+ .rightcontent{
+  margin-top: 2%;
+ }
+}
+.rightcontent h2{
+  padding: 0% 23%;
+  text-align: center;
+}
+
+.message{
+  background-color: #e2e8f0;
+  margin: 0% 3%;
+  padding: 10px;
+  color: black;
+  border-radius: 9px;
+}
+.message p{
+  font-size: large;
+    font-weight: 500;
+}
+.time{
+  color: grey;
+  align-items: center;
+  display: flex;
 }
