@@ -1,0 +1,44 @@
+.row{
+    margin-top: 5rem;
+}
+.col1{
+    width: 12rem;
+    border-right: 2px solid whitesmoke;
+}
+.col2{
+    width: 100%;
+}
+.sidenavopen{
+    width: 6%;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: inherit;
+}
+.maincontainer{
+    display: flex;
+    flex-direction: row;
+}
+@media (max-width:991px){
+  .col1{
+    display: none;
+}
+.sidenavopen{
+    display: block;
+    width: 12rem;
+    position: fixed;
+    z-index: 1;
+    background-color: aqua;
+}
+
+
+}
+
+
+// @media (min-width:250px)and (max-width:1093px) {
+//     .col1{
+//         width: 5%;
+//     }
+//   }
+

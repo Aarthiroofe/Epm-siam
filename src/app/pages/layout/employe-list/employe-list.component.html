@@ -1,0 +1,91 @@
+
+<div class="parent" >
+  <div class="row">
+    <div class="col-12 col-xl-4 col-lg-4 col-md-4 col-sm-12 top">
+      <h1>Employee list</h1>
+    </div>
+    <div class="d-flex justify-content-between   col-12 col-xl-8 col-lg-8 col-md-8 col-sm-12 ">
+      <mat-form-field appearance="outline" style="width:50% ;margin-left: 10px;">
+        <mat-icon matPrefix>search</mat-icon>
+          <input matInput (keyup)="applyFilter($event)" #input placeholder=" search" >
+        </mat-form-field>
+        <button mat-raised-button class="btn1" (click)="openPDF()" > <mat-icon style="margin-top: -4px;">download</mat-icon><b>Download PDF</b></button>
+        <button mat-raised-button class="btn"(click)="addemploye()" >	<mat-icon style="margin-top: -4px;">add</mat-icon><b>Add employee</b></button>
+    </div>
+  </div>
+    <div class="row">
+        <table mat-table [dataSource]="dataSource"    id="employee-list-data">
+          eaesa
+     <!-- Checkbox Column -->
+  <ng-container matColumnDef="select">
+    <th mat-header-cell  *matHeaderCellDef>
+      <mat-checkbox (change)="$event ? masterToggle() : null"
+                    [checked]="selection.hasValue() && isAllSelected()"
+                    [indeterminate]="selection.hasValue() && !isAllSelected()">
+      </mat-checkbox>
+    </th>
+    <td mat-cell *matCellDef="let row">
+      <mat-checkbox (click)="$event.stopPropagation()"
+                    (change)="$event ? selection.toggle(row) : null"
+                    [checked]="selection.isSelected(row)">
+      </mat-checkbox>
+    </td>
+  </ng-container>
+       
+             <!-- firstname -->
+              <ng-container matColumnDef="FirstName">
+                <th mat-header-cell  *matHeaderCellDef > First name </th>
+                <td mat-cell *matCellDef="let element"> {{element.FirstName}} </td>
+              </ng-container>
+             <!-- lastname -->
+              <ng-container matColumnDef="LastName" >
+                <th mat-header-cell  *matHeaderCellDef  >Last name </th>
+                <td mat-cell *matCellDef="let element"> {{element.LastName}} </td>
+              </ng-container>
+             <!-- email -->
+              <ng-container matColumnDef="email">
+                <th mat-header-cell  *matHeaderCellDef  >Email </th>
+                <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+              </ng-container>
+            <!-- Position Column -->
+            <ng-container matColumnDef="phone">
+              <th mat-header-cell  *matHeaderCellDef  >Phone</th>
+              <td mat-cell *matCellDef="let element"> {{element.phoneno}} </td>
+            </ng-container>
+               <!-- employee id -->
+               <ng-container matColumnDef="Employeeid">
+                <th mat-header-cell  *matHeaderCellDef  > Employee ID</th>
+                <td mat-cell *matCellDef="let element"> {{element.Employeeid}} </td>
+              </ng-container>
+            <!-- employertype -->
+            <ng-container matColumnDef="employertype">
+                <th mat-header-cell  *matHeaderCellDef  >Employer type</th>
+                <td mat-cell [ngClass]="{'traine': element.employertype == 'Trainee',
+                'Relive': element.employertype == 'Relived',
+                'prmnt': element.employertype == 'permanent',
+                'intrn': element.employertype == 'Internship',
+                'probat': element.employertype == 'Probation'
+               }" *matCellDef="let element"> {{element.employertype}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="Action">
+                <th mat-header-cell  *matHeaderCellDef > Action </th>
+                <td mat-cell *matCellDef="let element"> 
+                  <button class="iconbtn"><mat-icon  (click)="view()">visibility</mat-icon></button>
+                  <button class="iconbtn">  <mat-icon  (click)="delet(element)">delete</mat-icon> </button>
+                  </td>
+              </ng-container>
+            
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          
+            <tr class="mat-row" *matNoDataRow>
+              <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+            </tr>
+          </table>
+          <mat-paginator [pageSizeOptions]="[5, 10, 20,25]"
+          showFirstLastButtons 
+          aria-label="Select page of periodic elements">
+</mat-paginator>
+    </div>
+</div>

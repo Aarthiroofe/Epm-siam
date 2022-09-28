@@ -1,0 +1,51 @@
+.togglebtn{
+  margin: 1.5rem;
+}
+.mat-icon{
+  margin: 0 2rem;
+  font-size: xx-large;
+}
+.nav{
+  height: 100%;
+}
+.logo{
+  height: 55px;
+}
+.sidenavbutton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.navbar{
+  border-bottom: 2px solid whitesmoke;
+  background-color: white;
+  display: flex;
+  justify-content:space-between;
+  
+}
+.profieimg{
+  height: 70px;
+    width: 70px;
+    border-radius: 50px;
+}
+.right{
+  margin-right: 2%;
+  cursor: pointer;
+}
+.expandicon{
+  margin: 0px 2px;
+}
+.matmenuicon{
+  height: 35px;
+  margin: 0px;
+  width: 34px;
+}
+button.active{
+  color: red;
+  background: none;
+}
+.mat-icon.active{
+  color: red;
+}

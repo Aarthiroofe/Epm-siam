@@ -1,0 +1,156 @@
+<div class="parent">
+
+    <!-- login first page -->
+    <div class="row" *ngIf="loginpage">
+        <div class="col-12 col-xl-6 col-lg-6 col-sm-6 col-md-6 col-sm-12 left">
+            <div class="item_2">
+                <p class="item_1">Welcome To Siam <br>Computing</p>
+            </div>
+            <img class="leftimg"  src="../../../assets/images/login.svg">
+
+        </div>
+        <div class="col-12 col-xl-6 col-lg-6 col-sm-6 col-md-6 col-sm-12 right">
+            <div class="Header">
+                <img src="../../../assets/images/siam-computing-trans.png">
+            </div>
+            <h1>Login to your account</h1>
+            <div [formGroup]="login" class="login">
+                <mat-form-field appearance="outline">
+                    <mat-label>Username</mat-label>
+                    <input matInput type="email" formControlName="username">
+                    <mat-error>
+                        <div *ngIf="   login.controls['username'].touched && login.controls['username'].invalid && login.controls ">Username is
+                            required</div>
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" style="margin-bottom:0px ;">
+                    <mat-label>Password</mat-label>
+                    <input matInput [type]="showPassword ? 'text' : 'password'" formControlName="password" required
+                        placeholder="Your Password">
+                    <mat-icon matSuffix class="my-icon" *ngIf="showPassword==false" (click)="viewpass()">visibility
+                    </mat-icon>
+                    <mat-icon matSuffix class="my-icon" *ngIf="showPassword==true" (click)="viewpass()">visibility_off
+                    </mat-icon>
+                    <mat-error>
+                        <div *ngIf="login.controls['password'].touched && login.controls['password'].invalid">Password
+                            is required</div>
+                    </mat-error>
+                </mat-form-field>
+                <div align="end" class="hint" (click)="forgotpasswordpage()">Forgot Password?</div>
+                <div>
+                    <button mat-raised-button class="loginbtn" (click)="submit()">Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- emailsend page -->
+    <div class="row" *ngIf="forgot">
+        <div class="col-12 col-xl-6 col-lg-6 col-sm-6 col-md-6 col-sm-12 left">
+            <div class="item_2">
+                <img class="leftimg1" src="../../../assets/images/mailsendpage.svg   ">
+            </div>
+        </div>
+        <div class="col-12 col-xl-6 col-lg-6 col-sm-6 col-md-6 col-sm-12 right">
+            <div class="Header">
+                <img src="../../../assets/images/siam-computing-trans.png">
+            </div>
+            <h1>Forgot Password</h1>
+            <h2>No worries,we'll send you verification link </h2>
+
+            <div [formGroup]="forgotpassword" class="login">
+                <mat-form-field appearance="outline">
+                    <mat-label>Enter Your email</mat-label>
+                    <input matInput type="email" formControlName="reqemail">
+                    <mat-error>
+                        <div
+                            *ngIf="forgotpassword.controls['reqemail'].touched && forgotpassword.controls['reqemail'].invalid">
+                            Email is required</div>
+                    </mat-error>
+                </mat-form-field>
+
+                <div>
+                    <button mat-raised-button class="loginbtn" (click)="emailrequest()">send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Reset password page -->
+    <div class="row" *ngIf="newpasswordpage" style="height: 49rem;">
+        <div class="col-12 col-xl-6 col-lg-6 col-sm-6 col-md-6 col-sm-12 left">
+
+            <div class="item_2">
+                <img class="leftimg1" src="../../../assets/images/passwordcheck.svg">
+            </div>
+        </div>
+        <div class="col-12 col-xl-6 col-lg-6 col-sm-6 col-md-6 col-sm-12 right">
+            <div class="Header">
+                <img src="../../../assets/images/siam-computing-trans.png">
+            </div>
+            <h1 class="right_item_1">Login to your account</h1>
+            <div [formGroup]="createpassword" class="login">
+                <mat-form-field appearance="outline">
+                    <mat-label>New Password</mat-label>
+                    <input matInput type="password" [type]="showPassword ? 'text' : 'password'" formControlName="newpassword">
+                    <mat-icon matSuffix class="my-icon" *ngIf="showPassword ==false" (click)="viewpass()">visibility
+                    </mat-icon>
+                    <mat-icon matSuffix class="my-icon" *ngIf="showPassword==true" (click)="viewpass()">visibility_off
+                    </mat-icon>
+                    <mat-error>
+                        <div
+                            *ngIf="createpassword.controls['newpassword'].touched && createpassword.controls['newpassword'].invalid">
+                            New Password is required</div>
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" style="margin-bottom:0px ;">
+                    <mat-label>Confirm Password</mat-label>
+                    <input matInput [type]="showPassword1 ? 'text' : 'password'" formControlName="confirmpassword"
+                        required placeholder="Your Password">
+                    <mat-icon matSuffix class="my-icon" *ngIf="showPassword1==false" (click)="viewpass1()">visibility
+                    </mat-icon>
+                    <mat-icon matSuffix class="my-icon" *ngIf="showPassword1==true" (click)="viewpass1()">visibility_off
+                    </mat-icon>
+                    <mat-error>
+                        <div
+                            *ngIf="createpassword.controls['confirmpassword'].touched && createpassword.controls['confirmpassword'].invalid">
+                           Confirm Password is required</div>
+                    </mat-error>
+                </mat-form-field>
+                <div>
+                    <button mat-raised-button class="loginbtn" (click)="passwordupdate()">Reset Password</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+ 
+
+    <div class="row" *ngIf="updatesuccesfully" style="height:49rem ;" >
+        <div class="col-12 col-xl-6 col-lg-6 col-sm-6 col-md-6 col-sm-12 left">
+            <div>
+                <img class="leftimg1" src="../../../assets/images/passwordcheck.svg">
+            </div>
+        </div>
+        <div class="col-12 col-xl-6 col-lg-6 col-sm-6 col-md-6 col-sm-12 right">
+            <div class="Header">
+                <img src="../../../assets/images/siam-computing-trans.png">
+            </div>
+            <div class="passchanged">
+                <div style="margin:7%">
+                    <img class="tikimage" src="../../../assets/images/tikimage (1).png">
+                </div>
+                <p>Password changed!</p>
+                <p>Your password has been  chaged succesfully</p>
+            </div>
+              <h2>Back to <span style="color:rgb(225 111 35); cursor: pointer;" (click)="backtologin()">login?</span> </h2>
+                </div>
+            </div>
+   
+</div>

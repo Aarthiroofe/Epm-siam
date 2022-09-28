@@ -1,0 +1,82 @@
+.container-fluid{
+    padding:3% 3% 8% 3%;; background-color: #e9e7ea;
+    }
+label{
+    font-size: 20px;
+}
+.item_1 h1{
+    margin: 1% 0% 2% 3%;
+    font-size: revert;
+}
+
+::ng-deep .mat-tab-label {
+    font-size: 20px;
+}
+::ng-deep .mat-tab-body-content{
+    height: 100%;
+    overflow: initial !important;
+}
+.profileimg{
+    height: 150px;
+    width: 150px;
+    border-radius: 100px;
+}
+.item_2{
+    text-align: center;
+    border: 2px solid grey;
+    border-radius: 10px;
+    margin: 20% 15% 10% 15%;
+    padding:6%;
+    background-color: #e9e7ea;
+}
+.item_2 h2{
+    margin-bottom: 0px;
+
+}
+td{
+    font-size: large;
+    line-height: 2.5rem;
+    width: 58%;
+}
+.editbtn{
+width: 45%;font-size: large; margin-top: 2rem; 
+}
+.uploadicon{
+    width: 3rem;
+    position: absolute;
+    margin: 2rem;
+    }
+.files{
+    // position: absolute;
+    width: 8rem;
+    height: 8rem;
+    margin: 3%;
+    background-color: #e9e7ea;
+}
+.row{
+    display: flex;
+}
+.adddocbtn{
+    width: 20%;
+}
+.filebtn{
+    height: 100%;
+    width: 8rem;
+    background: transparent;
+    border: none;
+}
+input[type=file]{
+    color:transparent;
+    width: 8rem;
+    height: 100%;
+z-index: 1;
+background: transparent;
+}
+::file-selector-button {
+    display: none;
+  } 
+
+  .fileupload{
+    background: whitesmoke;
+   
+  }

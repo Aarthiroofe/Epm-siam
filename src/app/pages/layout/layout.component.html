@@ -1,0 +1,12 @@
+<app-header (sideNavToggled)="receiveCollapsed($event);"></app-header>
+<div class="container-fluid">
+    <div class="maincontainer">
+        <div class="col1"[ngClass]="{sidenavopen:sideNavStatus==true}">
+       <app-sidebar  [sidenavactive]="sideNavStatus" ></app-sidebar>
+        </div>
+        <div class="col2"  >
+       <router-outlet></router-outlet>
+       </div>
+       </div>
+</div>
+

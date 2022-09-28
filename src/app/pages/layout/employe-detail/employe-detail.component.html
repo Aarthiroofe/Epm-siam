@@ -1,0 +1,274 @@
+<div class="container-fluid">
+  <div class="item_1">
+    <h1>Kani M Profile</h1>
+    <mat-tab-group animationDuration="0ms">
+      <mat-tab label="Personal">
+        <div class="row" style="background-color:white ;">
+          <div class="col-12 col-xl-4 col-lg-4 col-md-4 col-sm-12">
+            <div>
+              <div class="item_2">
+                <div>
+                  <img class="profileimg" src="../../../assets/images/profile.jpg">
+                </div>
+                <div style="margin-top:15px ;">
+                  <h2>987</h2>
+                  <h2>Kani M </h2>
+                  <h2>Product designer</h2>
+                  <h2>kani@gmail.com</h2>
+                  <h2>78272835373</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12">
+            <div style="padding:30px 0px  ;">
+              <table>
+                <tr>
+                  <td>Employee Name</td>
+                  <td>Kani</td>
+                </tr>
+                <tr>
+                  <td>Employee ID</td>
+                  <td>342</td>
+                </tr>
+                <tr>
+                  <td>Employee Role </td>
+                  <td>Product Design</td>
+                </tr>
+                <tr>
+                  <td>Employee mail ID</td>
+                  <td>kani@Gmail.com</td>
+                </tr>
+                <tr>
+                  <td>Employee Mobile No</td>
+                  <td>873493483934</td>
+                </tr>
+                <tr>
+                  <td>DOB</td>
+                  <td>19.07.1999</td>
+                </tr>
+                <tr>
+                  <td>Gender</td>
+                  <td>Female</td>
+                </tr>
+                <tr>
+                  <td>Blood Group</td>
+                  <td>O+ Ve</td>
+                </tr>
+                <tr>
+                  <td>ISD Code</td>
+                  <td>Ao2786</td>
+                </tr>
+                <tr>
+                  <td>Skilled Type</td>
+                  <td>Skilled</td>
+                </tr>
+                <tr>
+                  <td>Temporary Address</td>
+                  <td>
+                    <address>1/120 Anna nagar,Chennai</address>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Permanent Address</td>
+                  <td>2/15,pudur,thanjavur(DT)</td>
+                </tr>
+              </table>
+            </div>
+
+          </div>
+          <div class="col-12 col-xl-2 col-lg-2 col-md-2 col-sm-12">
+            <button mat-raised-button color="primary" class="editbtn">Edit <mat-icon>edit</mat-icon></button>
+          </div>
+
+        </div>
+
+      </mat-tab>
+      <mat-tab label="Document">
+        <div class="row" style="background-color:white ;">
+          <div class="col-12 col-xl-4 col-lg-4 col-md-4 col-sm-12">
+            <div>
+              <div class="item_2">
+                <div>
+                  <img class="profileimg" src="../../../assets/images/profile.jpg">
+                </div>
+                <div style="margin-top:15px ;">
+                  <h2>987</h2>
+                  <h2>Kani M </h2>
+                  <h2>Product designer</h2>
+                  <h2>kani@gmail.com</h2>
+                  <h2>78272835373</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class=" col-12 col-xl-8 col-lg-8 col-md-8 col-sm-12" style="padding-top: 1.5rem;">
+            <div style="text-align:right ;margin-right: 10%;">
+              <button mat-raised-button color="primary" class="adddocbtn"><span
+                  style="margin: 0px 11px 0px -40px;font-size: x-large;" (click)="uploadFiles()">+</span>Add
+                Document</button>
+            </div>
+            <div style="margin-left: 30%;;" >
+              <div class="files">
+                <button class="d-flex filebtn">
+                  <input type="file" id="file" multiple (change)="getFileDetails($event)">
+                  <img class="uploadicon" src="../../../assets/images/upload2.png">
+                </button>
+              </div>
+               <div *ngFor="let file of myFiles">
+                <div>{{file.name}} - {{file.size}} - {{file.type}}</div>
+              </div>
+            </div>
+
+
+            <!-- <div class="files">
+                                <div style="text-align:right ;">
+                                    <mat-menu #appMenu="matMenu" yPosition="below">
+                                        <button mat-menu-item>Settings</button>
+                                        <button mat-menu-item>Help</button>
+                                      </mat-menu>
+                                      <button mat-icon-button [matMenuTriggerFor]="appMenu">
+                                        <mat-icon>more_vert</mat-icon>
+                                      </button>
+                                </div>
+                                <div style="text-align:center ;">
+                                    <img class="uploadicon" src="../../../assets/images/upload2.png">
+                                    <P >Adhar Card</P>
+                                </div>
+                              </div>
+
+                              <div class="files">
+                                <div style="text-align:right ;">
+                                    <mat-menu #appMenu="matMenu" yPosition="below">
+                                        <button mat-menu-item>Settings</button>
+                                        <button mat-menu-item>Help</button>
+                                      </mat-menu>
+                                      <button mat-icon-button [matMenuTriggerFor]="appMenu">
+                                        <mat-icon>more_vert</mat-icon>
+                                      </button>
+                                </div>
+                                <div style="text-align:center ;">
+                                    <img class="uploadicon" src="../../../assets/images/upload2.png">
+                                    <P >Educational Certificate</P>
+                                </div>
+                              </div>
+
+                              <div class="files">
+                                <div style="text-align:right ;">
+                                    <mat-menu #appMenu="matMenu" yPosition="below">
+                                        <button mat-menu-item>Settings</button>
+                                        <button mat-menu-item>Help</button>
+                                      </mat-menu>
+                                      <button mat-icon-button [matMenuTriggerFor]="appMenu">
+                                        <mat-icon>more_vert</mat-icon>
+                                      </button>
+                                </div>
+                                <div style="text-align:center ;">
+                                    <img class="uploadicon" src="../../../assets/images/upload2.png">
+                                    <P >Address Proof</P>
+                                </div>
+                              </div>
+
+                              <div class="files">
+                                <div style="text-align:right ;">
+                                    <mat-menu #appMenu="matMenu" yPosition="below">
+                                        <button mat-menu-item>Settings</button>
+                                        <button mat-menu-item>Help</button>
+                                      </mat-menu>
+                                      <button mat-icon-button [matMenuTriggerFor]="appMenu">
+                                        <mat-icon>more_vert</mat-icon>
+                                      </button>
+                                </div>
+                                <div style="text-align:center ;">
+                                    <img class="uploadicon" src="../../../assets/images/upload2.png">
+                                    <P >Bank Statement</P>
+                                </div>
+                              </div>
+
+
+                              <div class="files">
+                                <div style="text-align:right ;">
+                                    <mat-menu #appMenu="matMenu" yPosition="below">
+                                        <button mat-menu-item>Settings</button>
+                                        <button mat-menu-item>Help</button>
+                                      </mat-menu>
+                                      <button mat-icon-button [matMenuTriggerFor]="appMenu">
+                                        <mat-icon>more_vert</mat-icon>
+                                      </button>
+                                </div>
+                                <div style="text-align:center ;">
+                                    <img class="uploadicon" src="../../../assets/images/upload2.png">
+                                    <P >Photo</P>
+                                </div>
+                              </div>
+
+                              <div class="files">
+                                <div style="text-align:right ;">
+                                    <mat-menu #appMenu="matMenu" yPosition="below">
+                                        <button mat-menu-item>Settings</button>
+                                        <button mat-menu-item>Help</button>
+                                      </mat-menu>
+                                      <button mat-icon-button [matMenuTriggerFor]="appMenu">
+                                        <mat-icon>more_vert</mat-icon>
+                                      </button>
+                                </div>
+                                <div style="text-align:center ;">
+                                    <img class="uploadicon" src="../../../assets/images/upload2.png">
+                                    <P >Resume</P>
+                                </div>
+                              </div>
+
+                              <div class="files">
+                                <div style="text-align:right ;">
+                                    <mat-menu #appMenu="matMenu" yPosition="below">
+                                        <button mat-menu-item>Settings</button>
+                                        <button mat-menu-item>Help</button>
+                                      </mat-menu>
+                                      <button mat-icon-button [matMenuTriggerFor]="appMenu">
+                                        <mat-icon>more_vert</mat-icon>
+                                      </button>
+                                </div>
+                                <div style="text-align:center ;">
+                                    <img class="uploadicon" src="../../../assets/images/upload2.png">
+                                    <P >KYC</P>
+                                </div>
+                              </div>
+
+                              <div class="files">
+                                <div style="text-align:right ;">
+                                    <mat-menu #appMenu="matMenu" yPosition="below">
+                                        <button mat-menu-item>Settings</button>
+                                        <button mat-menu-item>Help</button>
+                                      </mat-menu>
+                                      <button mat-icon-button [matMenuTriggerFor]="appMenu">
+                                        <mat-icon>more_vert</mat-icon>
+                                      </button>
+                                </div>
+                                <div style="text-align:center ;">
+                                    <img class="uploadicon" src="../../../assets/images/upload2.png">
+                                    <P >Employment Service Letter</P>
+                                </div>
+                              </div>
+
+                              <div class="files">
+                                <div style="text-align:right ;">
+                                    <mat-menu #appMenu="matMenu" yPosition="below">
+                                        <button mat-menu-item>Settings</button>
+                                        <button mat-menu-item>Help</button>
+                                      </mat-menu>
+                                      <button mat-icon-button [matMenuTriggerFor]="appMenu">
+                                        <mat-icon>more_vert</mat-icon>
+                                      </button>
+                                </div>
+                                <div style="text-align:center ;">
+                                    <img class="uploadicon" src="../../../assets/images/upload2.png">
+                                    <P >Appointment Statement</P>
+                                </div>
+                              </div> -->
+            <!-- </div> -->
+          </div>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>

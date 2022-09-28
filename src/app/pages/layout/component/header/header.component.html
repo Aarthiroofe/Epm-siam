@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-lg  fixed-top">
+<div class="sidenavbutton">
+    <mat-icon  (click)="sideNavToggle()" >menu</mat-icon>
+    <img class="logo" src="./assets/images/logoonlycrop.jpg">
+</div>
+<div class="right"  mat-button [matMenuTriggerFor]="aboveMenu" >
+    <img class="profieimg" src="../../../../../assets/images/profile.jpg">
+    <mat-icon class="expandicon">expand_more</mat-icon>
+    
+<mat-menu #aboveMenu="matMenu" yPosition="below">
+  <button mat-menu-item routerLinkActive="active" class="list-group-item" routerLink="/layout/employe-list">
+    <mat-icon   routerLinkActive="active"class="matmenuicon" >person</mat-icon>
+    <span >My Profile</span> 
+  </button> 
+  <button mat-menu-item routerLinkActive="active" class="list-group-item" routerLink="/login">
+    <mat-icon  routerLinkActive="active" class="matmenuicon">logout</mat-icon>
+    <span>Log out</span>
+  </button>
+</mat-menu>
+</div>
+</nav>

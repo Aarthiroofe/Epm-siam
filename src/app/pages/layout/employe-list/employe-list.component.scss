@@ -1,0 +1,118 @@
+.parent{
+  margin-top: 6rem;
+padding:1% 1% 1% 2%;; background-color: white;
+}
+.top h1{
+  padding-top: 4%;
+    font-weight: 600;
+    color: #605e5e;font-size: xx-large;
+}
+table {
+    width: 100%;
+      padding: 0px;
+      border-collapse: separate !important;
+}
+
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  th{
+    font-size:large;
+    background-color: #f6e0de;
+    color: black;
+    font-weight: 600;
+    height: 4rem;
+   padding: 0px;
+  }
+  td{
+    font-size: medium;
+    height: 4rem;
+    padding: 0px;
+  }
+  .mat-header-cell {
+    text-align: center;
+  }
+
+   ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: #534f4f !important;
+}
+
+.btn{
+  width: 9rem;
+  background-color: red;
+  color: white;
+  height: 3rem;
+  border-radius: 27px;
+  margin-top: 5px;
+  padding: 0px;
+  border: none;
+}
+.btn1{
+  width:9rem;
+  box-shadow: none;
+  border: 1px solid #534f4f;
+  height: 3rem;
+  border-radius: 27px;
+  margin-top: 5px;
+  padding: 0px;
+}
+:host ::ng-deep .mat-form-field-outline-start {
+  border-radius: 15px 0 0 15px !important;
+  min-width: 15px !important;
+}
+ ::ng-deep th .mat-header-cell{
+  text-align: center !important ;
+}
+:host ::ng-deep .mat-form-field-outline-end {
+  border-radius: 0 15px 15px 0 !important;
+}
+::placeholder{
+  font-size: large;
+}
+.buttons{
+  justify-content: space-between  ;
+}
+.top{
+  display: flex;
+ justify-content: space-between;
+}
+.iconbtn{
+  border: none;
+  background: none;
+  padding: 0% 5%;
+}
+.traine{
+  color: blue;
+}
+.Relive{color: red;} .prmnt{color: #059d98;}  .intrn{color: violet;}
+.probat{color: yellow;}
+
+
+th.mat-header-cell:first-child{
+  border-bottom-left-radius: 15px ;
+  border-top-left-radius: 15px ;
+}
+th.mat-header-cell:last-child{
+  border-top-right-radius: 15px ;
+  border-bottom-right-radius: 15px ;
+}
+td.mat-cell:first-child{
+  border-bottom-left-radius: 15px ;
+  border-top-left-radius: 15px ;
+}
+td.mat-cell:last-child{
+  border-top-right-radius: 15px ;
+  border-bottom-right-radius: 15px ;
+}
+td.mat-cell {
+  border-bottom: 1px solid rgb(202, 196, 204);
+  border-top: 1px solid rgb(202, 196, 204);
+  text-align: center;
+ }
+ .mat-cell:first-child{
+  border-left: 1px solid rgb(202, 196, 204);
+ }
+ .mat-cell:last-child{
+  border-right: 1px solid rgb(202, 196, 204);
+ }

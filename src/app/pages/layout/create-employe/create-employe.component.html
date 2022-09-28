@@ -1,0 +1,573 @@
+<div class="container-fluid">
+    <div class="item_1">
+        <h5>
+            <mat-icon>arrow_back</mat-icon> Employee detail
+        </h5>
+        <mat-icon>chevron_right</mat-icon>
+        <h3>Add profile</h3>
+        <mat-icon>chevron_right</mat-icon>
+    </div>
+    <div class="item_2">
+        <h2>Details</h2>
+    </div>
+    <div>
+        <mat-stepper labelPosition="bottom" #stepper>
+            <mat-step [stepControl]="profile">
+                <form [formGroup]="profile">
+                    <ng-template matStepLabel>Profile</ng-template>
+                    <div class="row">
+                        <div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12 ">
+                            <div class="profileleft">
+                                <div class="row">
+                                    <div class="col-12 col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                                        <div class="form-group">
+                                            <mat-label>Full Name</mat-label>
+                                            <input type="name" class="form-control" formControlName="firstname"
+                                                placeholder="">
+                                            <small class="text-danger"
+                                                *ngIf="profile.controls['firstname'].touched && profile.controls['firstname'].invalid">
+                                                <i class="bi bi-exclamation-circle"></i>
+                                                This field is required
+                                            </small>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                                        <div class="form-group">
+                                            <mat-label>Middle Name</mat-label>
+                                            <input type="name" class="form-control" formControlName="middlename"
+                                                placeholder="">
+                                            <small class="text-danger"
+                                                *ngIf="profile.controls['middlename'].touched && profile.controls['middlename'].invalid">
+                                                <i class="bi bi-exclamation-circle"></i>
+                                                This field is required
+                                            </small>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-12 col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                                        <mat-label>Last Name</mat-label>
+                                        <div class="form-group">
+                                            <input type="name" class="form-control" formControlName="lastname"
+                                                placeholder="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <mat-label> Email</mat-label>
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" formControlName="workemail"
+                                            placeholder="">
+                                        <small class="text-danger"
+                                            *ngIf="profile.controls['workemail'].touched && profile.controls['workemail'].invalid">
+                                            <i class="bi bi-exclamation-circle"></i>
+                                            This field is required
+                                        </small>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                        <mat-label> Choose a Date</mat-label>
+                                        <div class="form-group">
+                                            <input type="date" class="form-control" formControlName="dob"
+                                                placeholder="MM/DD/YYYY" formControlName="dob">
+                                            <small class="text-danger"
+                                                *ngIf="profile.controls['dob'].touched && profile.controls['dob'].invalid">
+                                                <i class="bi bi-exclamation-circle"></i>
+                                                This field is required
+                                            </small>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                        <mat-label>Phone</mat-label>
+                                        <div class="form-group">
+                                            <input type="num" formControlName="phone" class="form-control"
+                                                placeholder="">
+                                            <small class="text-danger"
+                                                *ngIf="profile.controls['phone'].touched && profile.controls['phone'].invalid">
+                                                <i class="bi bi-exclamation-circle"></i>
+                                                This field is required
+                                            </small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                        <mat-label>Gender</mat-label>
+                                        <div class="form-group">
+                                            <select class="form-select" formControlName="gender">
+                                                <option value="option">Male</option>
+                                                <option value="option">Female</option>
+                                            </select>
+                                            <small class="text-danger"
+                                                *ngIf="profile.controls['gender'].touched && profile.controls['gender'].invalid">
+                                                <i class="bi bi-exclamation-circle"></i>
+                                                This field is required
+                                            </small>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                        <mat-label>Blood Group</mat-label>
+                                        <div class="form-group">
+                                            <select class="form-select" formControlName="bloodgroup">
+                                                <option value="option">A+ Ve</option>
+                                                <option value="option">A- Ve</option>
+                                                <option value="option">B+ Ve</option>
+                                                <option value="option">B- Ve</option>
+                                                <option value="option">O+ Ve</option>
+                                                <option value="option">O- Ve</option>
+                                            </select>
+                                            <small class="text-danger"
+                                                *ngIf="profile.controls['bloodgroup'].touched && profile.controls['bloodgroup'].invalid">
+                                                <i class="bi bi-exclamation-circle"></i>
+                                                This field is required
+                                            </small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <mat-label>Address</mat-label>
+                                    <div class="form-group">
+                                        <input type="num" formControlName="Address" class="form-control" placeholder="">
+                                        <small class="text-danger"
+                                            *ngIf="profile.controls['Address'].touched && profile.controls['Address'].invalid">
+                                            <i class="bi bi-exclamation-circle"></i>
+                                            This field is required
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12 ">
+                            <div class="profileright">
+                                <div>
+                                    <mat-label>Employee ID</mat-label>
+                                    <div class="form-group">
+                                        <input type="num" formControlName="employeeid" class="form-control"
+                                            placeholder="">
+                                        <small class="text-danger"
+                                            *ngIf="profile.controls['employeeid'].touched && profile.controls['employeeid'].invalid">
+                                            <i class="bi bi-exclamation-circle"></i>
+                                            This field is required
+                                        </small>
+                                    </div>
+                                </div>
+                                <div>
+                                    <mat-label>Skilled type</mat-label>
+                                    <div class="form-group">
+                                        <input type="text" formControlName="skilltype" class="form-control"
+                                            placeholder="">
+                                        <small class="text-danger"
+                                            *ngIf="profile.controls['skilltype'].touched && profile.controls['skilltype'].invalid">
+                                            <i class="bi bi-exclamation-circle"></i>
+                                            This field is required
+                                        </small>
+                                    </div>
+                                </div>
+                                <div>
+                                    <mat-label>ISD code</mat-label>
+                                    <div class="form-group">
+                                        <input type="number" formControlName="isdcode" class="form-control"
+                                            placeholder="">
+                                        <small class="text-danger"
+                                            *ngIf="profile.controls['isdcode'].touched && profile.controls['isdcode'].invalid">
+                                            <i class="bi bi-exclamation-circle"></i>
+                                            This field is required
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="profilesbtbtns">
+                                <button mat-raised-button class="btn1" style="color:grey;background-color: none;"
+                                    (click)="stepper.reset()">Cancel</button>
+                                <button mat-raised-button class="btn1" style="color:white;background-color:red"
+                                    matStepperNext>Next</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </mat-step>
+
+
+
+
+
+            <mat-step [stepControl]="Status" optional>
+                <form [formGroup]="Status">
+                    <ng-template matStepLabel>Status</ng-template>
+                    <div class="row">
+                        <div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                            <div class="profileleft">
+                                <mat-label>Date of joining</mat-label>
+                                <div class="form-group">
+                                    <input type="date" class="form-control" formControlName="doj"
+                                        placeholder="MM/DD/YYYY" formControlName="doj">
+                                    <small class="text-danger"
+                                        *ngIf="Status.controls['doj'].touched && Status.controls['doj'].invalid">
+                                        <i class="bi bi-exclamation-circle"></i>
+                                        This field is required
+                                    </small>
+                                </div>
+                                <mat-label>Date of confirmation</mat-label>
+                                <div class="form-group">
+                                    <input type="date" class="form-control" formControlName="doc"
+                                        placeholder="MM/DD/YYYY" formControlName="doc">
+                                    <small class="text-danger"
+                                        *ngIf="Status.controls['doc'].touched && Status.controls['doc'].invalid">
+                                        <i class="bi bi-exclamation-circle"></i>
+                                        This field is required
+                                    </small>
+                                </div>
+                                <mat-label>Date of redignation</mat-label>
+                                <div class="form-group">
+                                    <input type="date" class="form-control" formControlName="dor"
+                                        placeholder="MM/DD/YYYY" formControlName="dor">
+                                    <small class="text-danger"
+                                        *ngIf="Status.controls['dor'].touched && Status.controls['dor'].invalid">
+                                        <i class="bi bi-exclamation-circle"></i>
+                                        This field is required
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                            <div class="profileright">
+                                <mat-label>Employement type</mat-label>
+                                <div class="form-group">
+                                    <select class="form-select" formControlName="emptype">
+                                        <option value="option">Intern</option>
+                                        <option value="option"> Consultant </option>
+                                        <option value="option">Permanent</option>
+                                        <option value="option">Trainee</option>
+                                        <option value="option">Contractual</option>
+                                    </select>
+                                    <small class="text-danger"
+                                        *ngIf="Status.controls['emptype'].touched && Status.controls['emptype'].invalid">
+                                        <i class="bi bi-exclamation-circle"></i>
+                                        This field is required
+                                    </small>
+                                </div>
+
+                                <mat-label>Employement status</mat-label>
+                                <div class="form-group">
+                                    <select class="form-select" formControlName="empstatus">
+                                        <option value="option">Probation</option>
+                                        <option value="option">Confirmed</option>
+                                        <option value="option">Settled</option>
+                                        <option value="option">Relieved</option>
+                                        <option value="option">Resigned</option>
+                                    </select>
+                                    <small class="text-danger"
+                                        *ngIf="Status.controls['empstatus'].touched && Status.controls['empstatus'].invalid">
+                                        <i class="bi bi-exclamation-circle"></i>
+                                        This field is required
+                                    </small>
+                                </div>
+                            </div>
+                            <div class="profilesbtbtns">
+                                <button mat-raised-button class="btn1" style="color:grey;background-color: none;"
+                                    (click)="stepper.reset()">Cancel</button>
+                                <button mat-raised-button class="btn1" style="color:white;background-color:red"
+                                    matStepperNext>Next</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </mat-step>
+            <mat-step [stepControl]="Position" optional>
+                <form [formGroup]="Position">
+                    <ng-template matStepLabel>Position</ng-template>
+                    <div class="row">
+                        <div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                            <div class="positionleft">
+                                <mat-label>Company name</mat-label>
+                                <div class="form-group">
+                                    <input type="text" formControlName="company" class="form-control" placeholder="">
+                                    <small class="text-danger"
+                                        *ngIf="Position.controls['company'].touched && Position.controls['company'].invalid">
+                                        <i class="bi bi-exclamation-circle"></i>
+                                        This field is required
+                                    </small>
+                                </div>
+                                <mat-label>Department</mat-label>
+                                <div class="form-group">
+                                    <select class="form-select" formControlName="department">
+                                        <option value="option">Probation</option>
+
+                                    </select>
+                                    <small class="text-danger"
+                                        *ngIf="Position.controls['department'].touched && Position.controls['department'].invalid">
+                                        <i class="bi bi-exclamation-circle"></i>
+                                        This field is required
+                                    </small>
+                                </div>
+                                <mat-label>Sub department</mat-label>
+                                <div class="form-group">
+                                    <select class="form-select" formControlName="subdepartment">
+                                        <option value="option">Probation</option>
+                                    </select>
+                                    <small class="text-danger"
+                                        *ngIf="Position.controls['subdepartment'].touched && Position.controls['subdepartment'].invalid">
+                                        <i class="bi bi-exclamation-circle"></i>
+                                        This field is required
+                                    </small>
+                                </div>
+                                <mat-label>Designation</mat-label>
+                                <div class="form-group">
+                                    <select class="form-select" formControlName="designation">
+                                        <option value="option">Probation</option>
+                                    </select>
+                                    <small class="text-danger"
+                                        *ngIf="Position.controls['designation'].touched && Position.controls['designation'].invalid">
+                                        <i class="bi bi-exclamation-circle"></i>
+                                        This field is required
+                                    </small>
+                                </div>
+                                <mat-label>Region</mat-label>
+                                <div class="form-group">
+                                    <select class="form-select" formControlName="region">
+                                        <option value="option">Probation</option>
+                                    </select>
+                                    <small class="text-danger"
+                                        *ngIf="Position.controls['region'].touched && Position.controls['region'].invalid">
+                                        <i class="bi bi-exclamation-circle"></i>
+                                        This field is required
+                                    </small>
+                                </div>
+                                <mat-label>Level</mat-label>
+                                <div class="form-group">
+                                    <select class="form-select" formControlName="level">
+                                        <option value="option">Probation</option>
+                                    </select>
+                                    <small class="text-danger"
+                                        *ngIf="Position.controls['level'].touched && Position.controls['level'].invalid">
+                                        <i class="bi bi-exclamation-circle"></i>
+                                        This field is required
+                                    </small>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                            <div class="positionright">
+                                <mat-label>Report manager</mat-label>
+                                <div class="form-group">
+                                    <select class="form-select" formControlName="reportingmanager">
+                                        <option value="option">Report manager</option>
+                                    </select>
+                                    <small class="text-danger"
+                                        *ngIf="Position.controls['reportingmanager'].touched && Position.controls['reportingmanager'].invalid">
+                                        <i class="bi bi-exclamation-circle"></i>
+                                        This field is required
+                                    </small>
+                                </div>
+                                <mat-label>Functional manager</mat-label>
+                                <div class="form-group">
+                                    <select class="form-select" formControlName="functionalmanager">
+                                        <option value="option">Functional manager</option>
+                                    </select>
+                                    <small class="text-danger"
+                                        *ngIf="Position.controls['functionalmanager'].touched && Position.controls['functionalmanager'].invalid">
+                                        <i class="bi bi-exclamation-circle"></i>
+                                        This field is required
+                                    </small>
+                                </div>
+                                <mat-label>Branch</mat-label>
+                                <div class="form-group">
+                                    <select class="form-select" formControlName="branch">
+                                        <option value="option">Branch</option>
+                                    </select>
+                                    <small class="text-danger"
+                                        *ngIf="Position.controls['branch'].touched && Position.controls['branch'].invalid">
+                                        <i class="bi bi-exclamation-circle"></i>
+                                        This field is required
+                                    </small>
+                                </div>
+                                <mat-label>Sub branch</mat-label>
+                                <div class="form-group">
+                                    <select class="form-select" formControlName="subbranch">
+                                        <option value="option">Sub branch</option>
+                                    </select>
+                                    <small class="text-danger"
+                                        *ngIf="Position.controls['subbranch'].touched && Position.controls['subbranch'].invalid">
+                                        <i class="bi bi-exclamation-circle"></i>
+                                        This field is required
+                                    </small>
+                                </div>
+                                <mat-label>Grade</mat-label>
+                                <div class="form-group">
+                                    <select class="form-select" formControlName="grade">
+                                        <option value="option">Grade</option>
+                                    </select>
+                                    <small class="text-danger"
+                                        *ngIf="Position.controls['grade'].touched && Position.controls['grade'].invalid">
+                                        <i class="bi bi-exclamation-circle"></i>
+                                        This field is required
+                                    </small>
+                                </div>
+
+                            </div>
+                            <div class="profilesbtbtns">
+                                <button mat-raised-button class="btn1" style="color:grey;background-color: none;"
+                                    (click)="stepper.reset()">Cancel</button>
+                                <button mat-raised-button class="btn1" style="color:white;background-color:red"
+                                    matStepperNext>Next</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </mat-step>
+            <mat-step [stepControl]="Document" optional>
+                <form [formGroup]="Document">
+                    <ng-template matStepLabel>Document</ng-template>
+                    <div style="text-align:right ;">
+                        <button mat-raised-button class="adddocbtn">
+                            <mat-icon style="margin-top: -9px;">add</mat-icon><b>Add document</b>
+                        </button>
+                    </div>
+                    <div class="row documentrow">
+                        <div class="col-12 col-xl-2 col-lg-2 col-md-3 col-sm-4 doc">
+                            <div class="docitem1">
+                                <img src="../../../../assets/images/tiksmall.png">
+                            </div>
+                            <div class="docitem2">
+                                <img src="../../../../assets/images/pdfbig.png">
+                                <p><img src="../../../../assets/images/pdfsmall.png">&nbsp; Adhar Card</p>
+                            </div>
+                               <input type="file" id="file" >
+                               <label for="file"><img src="../../../../assets/images/upimg.png">&nbsp; Upload</label>
+                        </div>
+
+                        <div class="col-12 col-xl-2 col-lg-2 col-md-3 col-sm-4 doc">
+                            <div class="docitem1">
+                                <img src="../../../../assets/images/tiksmall.png">
+                            </div>
+                            <div class="docitem2">
+                                <img src="../../../../assets/images/pdfbig.png">
+                                <p><img src="../../../../assets/images/pdfsmall.png">&nbsp;PAN Card</p>
+                            </div>
+                            <input type="file" id="file" >
+                               <label for="file"><img src="../../../../assets/images/upimg.png">&nbsp; Upload</label>
+                        </div>
+
+                        <div class="col-12 col-xl-2 col-lg-2 col-md-3 col-sm-4 doc">
+                            <div class="docitem1">
+                                <img src="../../../../assets/images/tiksmall.png">
+                            </div>
+                            <div class="docitem2">
+                                <img src="../../../../assets/images/pdfbig.png">
+                                <p><img src="../../../../assets/images/pdfsmall.png">&nbsp; Educational Certificate</p>
+                            </div>
+                            <input type="file" id="file" >
+                               <label for="file"><img src="../../../../assets/images/upimg.png">&nbsp; Upload</label>
+                        </div>
+
+                        <div class="col-12 col-xl-2 col-lg-2 col-md-3 col-sm-4 doc">
+                            <div class="docitem1">
+                                <img src="../../../../assets/images/tiksmall.png">
+                            </div>
+                            <div class="docitem2">
+                                <img src="../../../../assets/images/pdfbig.png">
+                                <p><img src="../../../../assets/images/pdfsmall.png">&nbsp; photo</p>
+                            </div>
+                            <input type="file" id="file" >
+                               <label for="file"><img src="../../../../assets/images/upimg.png">&nbsp; Upload</label>
+                        </div>
+
+                        <div class="col-12 col-xl-2 col-lg-2 col-md-3 col-sm-4 doc">
+                            <div class="docitem1">
+                                <img src="../../../../assets/images/tiksmall.png">
+                            </div>
+                            <div class="docitem2">
+                                <img src="../../../../assets/images/pdfbig.png">
+                                <p><img src="../../../../assets/images/pdfsmall.png">&nbsp; Address proof</p>
+                            </div>
+                            <input type="file" id="file" >
+                               <label for="file"><img src="../../../../assets/images/upimg.png">&nbsp; Upload</label>
+                        </div>
+
+                        <div class="col-12 col-xl-2 col-lg-2 col-md-3 col-sm-4 doc">
+                            <div class="docitem1">
+                                <img src="../../../../assets/images/tiksmall.png">
+                            </div>
+                            <div class="docitem2">
+                                <img src="../../../../assets/images/pdfbig.png">
+                                <p><img src="../../../../assets/images/pdfsmall.png">&nbsp;Employement Service letter
+                                </p>
+                            </div>
+                            <input type="file" id="file" >
+                               <label for="file"><img src="../../../../assets/images/upimg.png">&nbsp; Upload</label>
+                        </div>
+
+                        <div class="col-12 col-xl-2 col-lg-2 col-md-3 col-sm-4 doc">
+                            <div class="docitem1">
+                                <img src="../../../../assets/images/tiksmall.png">
+                            </div>
+                            <div class="docitem2">
+                                <img src="../../../../assets/images/pdfbig.png">
+                                <p><img src="../../../../assets/images/pdfsmall.png">&nbsp; Pay slips</p>
+                            </div>
+                            <input type="file" id="file" >
+                               <label for="file"><img src="../../../../assets/images/upimg.png">&nbsp; Upload</label>
+                        </div>
+
+                        <div class="col-12 col-xl-2 col-lg-2 col-md-3 col-sm-4 doc">
+                            <div class="docitem1">
+                                <img src="../../../../assets/images/tiksmall.png">
+                            </div>
+                            <div class="docitem2">
+                                <img src="../../../../assets/images/pdfbig.png">
+                                <p><img src="../../../../assets/images/pdfsmall.png">&nbsp; Bank Statemets</p>
+                            </div>
+                            <input type="file" id="file" >
+                               <label for="file"><img src="../../../../assets/images/upimg.png">&nbsp; Upload</label>
+
+                        </div>
+                        <div class="col-12 col-xl-2 col-lg-2 col-md-3 col-sm-4 doc">
+                            <div class="docitem1">
+                                <img src="../../../../assets/images/tiksmall.png">
+                            </div>
+                            <div class="docitem2">
+                                <img src="../../../../assets/images/pdfbig.png">
+                                <p><img src="../../../../assets/images/pdfsmall.png">&nbsp; Resume</p>
+                            </div>
+                            <input type="file" id="file" >
+                               <label for="file"><img src="../../../../assets/images/upimg.png">&nbsp; Upload</label>
+                        </div>
+
+                        <div class="col-12 col-xl-2 col-lg-2 col-md-3 col-sm-4 doc">
+                            <div class="docitem1">
+                                <img src="../../../../assets/images/tiksmall.png">
+                            </div>
+                            <div class="docitem2">
+                                <img src="../../../../assets/images/pdfbig.png">
+                                <p><img src="../../../../assets/images/pdfsmall.png">&nbsp; KYC</p>
+                            </div>
+                            <input type="file" id="file" >
+                               <label for="file"><img src="../../../../assets/images/upimg.png">&nbsp; Upload</label>
+                        </div>
+
+                        <div class="col-12 col-xl-2 col-lg-2 col-md-3 col-sm-4 doc">
+                            <div class="docitem1">
+                                <img src="../../../../assets/images/tiksmall.png">
+                            </div>
+                            <div class="docitem2">
+                                <img src="../../../../assets/images/pdfbig.png">
+                                <p><img src="../../../../assets/images/pdfsmall.png">&nbsp; Appointment acceptance</p>
+                            </div>
+                            <input type="file" id="file" >
+                               <label for="file"><img src="../../../../assets/images/upimg.png">&nbsp; Upload</label>
+                        </div>
+                    </div>
+                    <div>
+                        <button mat-button matStepperPrevious>Back</button>
+                        <button mat-button (click)="stepper.reset()">Reset</button>
+                    </div>
+                </form>
+            </mat-step>
+
+        </mat-stepper>
+
+    </div>
+</div>
