@@ -14,7 +14,10 @@ const routes: Routes = [
   { path: 'layout', loadChildren: () => import('./pages/layout/layout.module').then(m => m.LayoutModule),
   canActivate:[AuthGuard]
  },
-  { path: 'menu', loadChildren: () => import('./pages/menu/menu.module').then(m => m.MenuModule), canActivate:[AuthGuard] },
+  { path: 'menu', loadChildren: () => import('./pages/menu/menu.module').then(m => m.MenuModule),
+   canActivate:[AuthGuard]
+   },
+  { path: 'userprofile', loadChildren: () => import('./pages/layout/userprofile/userprofile.module').then(m => m.UserprofileModule) },
 ];
 
 

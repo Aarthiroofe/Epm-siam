@@ -13,7 +13,7 @@ export class ApiService {
   login(data:any):Observable<any>{
     console.log(data);
     return this.http.post<any>
-    (environment.apiurl+'login/',data)
+    (environment.apiurl+'/auth/user/login/',data)
     
   }
 }

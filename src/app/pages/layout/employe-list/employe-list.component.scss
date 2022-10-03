@@ -116,3 +116,33 @@ td.mat-cell {
  .mat-cell:last-child{
   border-right: 1px solid rgb(202, 196, 204);
  }
+
+ .dialogueitem1{
+  text-align: center;
+ }
+ .dialoguebuttons{
+  margin-top: 1.5rem;
+  text-align: center;
+}
+.dialoguebtn1{
+  margin: 2px 13px;
+  border: 1px solid #e5d7d7;
+  border-radius: 5px;
+  padding: 0px 15px;
+  width: 70px;
+
+}
+.dialoguebtn2{
+  margin: 2px 13px;
+  border: none;
+  border-radius: 5px;
+  padding: 0px 15px;
+  background-color: red;
+  color: white;
+  width: 70px;
+}
+
+.dialogueitem1 h3{
+  margin-top: 15px;
+  font-weight: 600;
+}

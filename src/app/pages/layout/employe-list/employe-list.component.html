@@ -17,7 +17,7 @@
         <table mat-table [dataSource]="dataSource"    id="employee-list-data">
           eaesa
      <!-- Checkbox Column -->
-  <ng-container matColumnDef="select">
+  <!-- <ng-container matColumnDef="select">
     <th mat-header-cell  *matHeaderCellDef>
       <mat-checkbox (change)="$event ? masterToggle() : null"
                     [checked]="selection.hasValue() && isAllSelected()"
@@ -30,7 +30,7 @@
                     [checked]="selection.isSelected(row)">
       </mat-checkbox>
     </td>
-  </ng-container>
+  </ng-container> -->
        
              <!-- firstname -->
               <ng-container matColumnDef="FirstName">
@@ -72,7 +72,7 @@
                 <th mat-header-cell  *matHeaderCellDef > Action </th>
                 <td mat-cell *matCellDef="let element"> 
                   <button class="iconbtn"><mat-icon  (click)="view()">visibility</mat-icon></button>
-                  <button class="iconbtn">  <mat-icon  (click)="delet(element)">delete</mat-icon> </button>
+                  <button class="iconbtn">  <mat-icon  (click)="openDialog()">delete</mat-icon> </button>
                   </td>
               </ng-container>
             

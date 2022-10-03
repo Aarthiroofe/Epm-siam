@@ -134,3 +134,14 @@ label{
     border: 1px solid #d3cfd0;
     cursor: pointer;
 }
+::ng-deep .mat-step-header .mat-step-icon-selected {
+    background-color: green ;
+ }
+ ::ng-deep .mat-step-header .mat-step-icon-state-done{
+    background-color: green;
+ }
+ ::ng-deep .mat-step-header .mat-step-icon-state-edit{
+    background-color: green;
+ }
+
+

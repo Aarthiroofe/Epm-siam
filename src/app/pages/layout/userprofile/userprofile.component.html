@@ -1,0 +1,719 @@
+<div class="container-fluid">
+    <div class="top">
+      <div>
+        <img class="profileimg" src="../../../../assets/images/profile.jpg">
+        <img class="editpencil" src="../../../../assets/images/editpencil.png">
+      </div>
+      <div class="topsub">
+        <h1>Anu M <span>(Emp ID : 010)</span></h1>
+        <p>Product Designer</p>
+      </div>
+    </div>
+    <mat-tab-group animationDuration="0ms">
+      <mat-tab label="Profile" [formGroup]="profile">
+        <div class="row mattab1">
+          <div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12 ">
+            <div class="profileleft">
+              <div class="formflex">
+                <div class="form-group formsub">
+                  <mat-label>Full Name</mat-label>
+                  <input type="name" class="form-control" formControlName="firstname" placeholder="">
+                  <small class="text-danger"
+                    *ngIf="profile.controls['firstname'].touched && profile.controls['firstname'].invalid">
+                    <i class="bi bi-exclamation-circle"></i>
+                    This field is required
+                  </small>
+                </div>
+                <div class="form-group formsub2">
+                  <mat-label>Middle Name</mat-label>
+                  <input type="name" class="form-control" formControlName="middlename" placeholder="">
+                  <small class="text-danger"
+                    *ngIf="profile.controls['middlename'].touched && profile.controls['middlename'].invalid">
+                    <i class="bi bi-exclamation-circle"></i>
+                    This field is required
+                  </small>
+                </div>
+  
+                <div class="form-group formsub2">
+                  <mat-label>Last Name</mat-label>
+                  <input type="name" class="form-control" formControlName="lastname" placeholder="">
+                </div>
+              </div>
+              <div>
+                <div class="form-group">
+                  <mat-label> Email</mat-label>
+                  <input type="email" class="form-control" formControlName="workemail" placeholder="">
+                  <small class="text-danger"
+                    *ngIf="profile.controls['workemail'].touched && profile.controls['workemail'].invalid">
+                    <i class="bi bi-exclamation-circle"></i>
+                    This field is required
+                  </small>
+                </div>
+              </div>
+              <div class="formflex">
+                <div class="form-group formsub3">
+                  <mat-label>Birth Date</mat-label>
+                  <input type="date" class="form-control" formControlName="dob" placeholder="MM/DD/YYYY"
+                    formControlName="dob">
+                  <small class="text-danger" *ngIf="profile.controls['dob'].touched && profile.controls['dob'].invalid">
+                    <i class="bi bi-exclamation-circle"></i>
+                    This field is required
+                  </small>
+                </div>
+                <div class="form-group formsub4">
+                  <mat-label>Phone</mat-label>
+                  <input type="num" formControlName="phone" class="form-control" placeholder="">
+                  <small class="text-danger"
+                    *ngIf="profile.controls['phone'].touched && profile.controls['phone'].invalid">
+                    <i class="bi bi-exclamation-circle"></i>
+                    This field is required
+                  </small>
+                </div>
+              </div>
+              <div class="formflex">
+                <div class="form-group formsub3">
+                  <mat-label>Gender</mat-label>
+                  <select class="form-select" formControlName="gender">
+                    <option value="option">Male</option>
+                    <option value="option">Female</option>
+                  </select>
+                  <small class="text-danger"
+                    *ngIf="profile.controls['gender'].touched && profile.controls['gender'].invalid">
+                    <i class="bi bi-exclamation-circle"></i>
+                    This field is required
+                  </small>
+                </div>
+                <div class="form-group formsub4">
+                  <mat-label>Blood Group</mat-label>
+                  <select class="form-select" formControlName="bloodgroup">
+                    <option value="option">A+ Ve</option>
+                    <option value="option">A- Ve</option>
+                    <option value="option">B+ Ve</option>
+                    <option value="option">B- Ve</option>
+                    <option value="option">O+ Ve</option>
+                    <option value="option">O- Ve</option>
+                  </select>
+                  <small class="text-danger"
+                    *ngIf="profile.controls['bloodgroup'].touched && profile.controls['bloodgroup'].invalid">
+                    <i class="bi bi-exclamation-circle"></i>
+                    This field is required
+                  </small>
+                </div>
+              </div>
+              <div>
+                <div class="form-group">
+                  <mat-label>Address</mat-label>
+                  <input type="num" formControlName="Address" class="form-control" placeholder="">
+                  <small class="text-danger"
+                    *ngIf="profile.controls['Address'].touched && profile.controls['Address'].invalid">
+                    <i class="bi bi-exclamation-circle"></i>
+                    This field is required
+                  </small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12 ">
+            <div class="profileright">
+              <div>
+                <div class="form-group">
+                  <mat-label>Employee ID</mat-label>
+                  <input type="num" formControlName="employeeid" class="form-control" placeholder="">
+                  <small class="text-danger"
+                    *ngIf="profile.controls['employeeid'].touched && profile.controls['employeeid'].invalid">
+                    <i class="bi bi-exclamation-circle"></i>
+                    This field is required
+                  </small>
+                </div>
+              </div>
+              <div>
+                <div class="form-group">
+                  <mat-label>Skilled type</mat-label>
+                  <input type="text" formControlName="skilltype" class="form-control" placeholder="">
+                  <small class="text-danger"
+                    *ngIf="profile.controls['skilltype'].touched && profile.controls['skilltype'].invalid">
+                    <i class="bi bi-exclamation-circle"></i>
+                    This field is required
+                  </small>
+                </div>
+              </div>
+              <div>
+                <div class="form-group">
+                  <mat-label>ISD code</mat-label>
+                  <input type="number" formControlName="isdcode" class="form-control" placeholder="">
+                  <small class="text-danger"
+                    *ngIf="profile.controls['isdcode'].touched && profile.controls['isdcode'].invalid">
+                    <i class="bi bi-exclamation-circle"></i>
+                    This field is required
+                  </small>
+                </div>
+              </div>
+            </div>
+            <div class="profilesbtbtns">
+              <button mat-raised-button class="btn1">EDIT PROFILE</button>
+            </div>
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="Status" [formGroup]="Status">
+        <div class="row mattab">
+          <div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12">
+            <div class="profileleft">
+              <mat-label>Date of joining</mat-label>
+              <div class="form-group">
+                <input type="date" class="form-control" formControlName="doj" placeholder="MM/DD/YYYY"
+                  formControlName="doj">
+                <small class="text-danger" *ngIf="Status.controls['doj'].touched && Status.controls['doj'].invalid">
+                  <i class="bi bi-exclamation-circle"></i>
+                  This field is required
+                </small>
+              </div>
+              <mat-label>Date of confirmation</mat-label>
+              <div class="form-group">
+                <input type="date" class="form-control" formControlName="doc" placeholder="MM/DD/YYYY"
+                  formControlName="doc">
+                <small class="text-danger" *ngIf="Status.controls['doc'].touched && Status.controls['doc'].invalid">
+                  <i class="bi bi-exclamation-circle"></i>
+                  This field is required
+                </small>
+              </div>
+              <mat-label>Date of redignation</mat-label>
+              <div class="form-group">
+                <input type="date" class="form-control" formControlName="dor" placeholder="MM/DD/YYYY"
+                  formControlName="dor">
+                <small class="text-danger" *ngIf="Status.controls['dor'].touched && Status.controls['dor'].invalid">
+                  <i class="bi bi-exclamation-circle"></i>
+                  This field is required
+                </small>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12">
+            <div class="profileright">
+              <mat-label>Employement type</mat-label>
+              <div class="form-group">
+                <select class="form-select" formControlName="emptype">
+                  <option value="option">Intern</option>
+                  <option value="option"> Consultant </option>
+                  <option value="option">Permanent</option>
+                  <option value="option">Trainee</option>
+                  <option value="option">Contractual</option>
+                </select>
+                <small class="text-danger"
+                  *ngIf="Status.controls['emptype'].touched && Status.controls['emptype'].invalid">
+                  <i class="bi bi-exclamation-circle"></i>
+                  This field is required
+                </small>
+              </div>
+  
+              <mat-label>Employement status</mat-label>
+              <div class="form-group">
+                <select class="form-select" formControlName="empstatus">
+                  <option value="option">Probation</option>
+                  <option value="option">Confirmed</option>
+                  <option value="option">Settled</option>
+                  <option value="option">Relieved</option>
+                  <option value="option">Resigned</option>
+                </select>
+                <small class="text-danger"
+                  *ngIf="Status.controls['empstatus'].touched && Status.controls['empstatus'].invalid">
+                  <i class="bi bi-exclamation-circle"></i>
+                  This field is required
+                </small>
+              </div>
+            </div>
+            <div class="profilesbtbtns">
+              <button mat-raised-button class="btn1">EDIT STATUS</button>
+            </div>
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="Position" [formGroup]="Position">
+        <div class="row mattab">
+          <div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12">
+            <div class="positionleft">
+              <mat-label>Company name</mat-label>
+              <div class="form-group">
+                <input type="text" formControlName="company" class="form-control" placeholder="">
+                <small class="text-danger"
+                  *ngIf="Position.controls['company'].touched && Position.controls['company'].invalid">
+                  <i class="bi bi-exclamation-circle"></i>
+                  This field is required
+                </small>
+              </div>
+              <mat-label>Department</mat-label>
+              <div class="form-group">
+                <select class="form-select" formControlName="department">
+                  <option value="option">Probation</option>
+  
+                </select>
+                <small class="text-danger"
+                  *ngIf="Position.controls['department'].touched && Position.controls['department'].invalid">
+                  <i class="bi bi-exclamation-circle"></i>
+                  This field is required
+                </small>
+              </div>
+              <mat-label>Sub department</mat-label>
+              <div class="form-group">
+                <select class="form-select" formControlName="subdepartment">
+                  <option value="option">Probation</option>
+                </select>
+                <small class="text-danger"
+                  *ngIf="Position.controls['subdepartment'].touched && Position.controls['subdepartment'].invalid">
+                  <i class="bi bi-exclamation-circle"></i>
+                  This field is required
+                </small>
+              </div>
+              <mat-label>Designation</mat-label>
+              <div class="form-group">
+                <select class="form-select" formControlName="designation">
+                  <option value="option">Probation</option>
+                </select>
+                <small class="text-danger"
+                  *ngIf="Position.controls['designation'].touched && Position.controls['designation'].invalid">
+                  <i class="bi bi-exclamation-circle"></i>
+                  This field is required
+                </small>
+              </div>
+              <mat-label>Region</mat-label>
+              <div class="form-group">
+                <select class="form-select" formControlName="region">
+                  <option value="option">Probation</option>
+                </select>
+                <small class="text-danger"
+                  *ngIf="Position.controls['region'].touched && Position.controls['region'].invalid">
+                  <i class="bi bi-exclamation-circle"></i>
+                  This field is required
+                </small>
+              </div>
+              <mat-label>Level</mat-label>
+              <div class="form-group">
+                <select class="form-select" formControlName="level">
+                  <option value="option">Probation</option>
+                </select>
+                <small class="text-danger"
+                  *ngIf="Position.controls['level'].touched && Position.controls['level'].invalid">
+                  <i class="bi bi-exclamation-circle"></i>
+                  This field is required
+                </small>
+              </div>
+  
+            </div>
+          </div>
+          <div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12">
+            <div class="positionright">
+              <mat-label>Report manager</mat-label>
+              <div class="form-group">
+                <select class="form-select" formControlName="reportingmanager">
+                  <option value="option">Report manager</option>
+                </select>
+                <small class="text-danger"
+                  *ngIf="Position.controls['reportingmanager'].touched && Position.controls['reportingmanager'].invalid">
+                  <i class="bi bi-exclamation-circle"></i>
+                  This field is required
+                </small>
+              </div>
+              <mat-label>Functional manager</mat-label>
+              <div class="form-group">
+                <select class="form-select" formControlName="functionalmanager">
+                  <option value="option">Functional manager</option>
+                </select>
+                <small class="text-danger"
+                  *ngIf="Position.controls['functionalmanager'].touched && Position.controls['functionalmanager'].invalid">
+                  <i class="bi bi-exclamation-circle"></i>
+                  This field is required
+                </small>
+              </div>
+              <mat-label>Branch</mat-label>
+              <div class="form-group">
+                <select class="form-select" formControlName="branch">
+                  <option value="option">Branch</option>
+                </select>
+                <small class="text-danger"
+                  *ngIf="Position.controls['branch'].touched && Position.controls['branch'].invalid">
+                  <i class="bi bi-exclamation-circle"></i>
+                  This field is required
+                </small>
+              </div>
+              <mat-label>Sub branch</mat-label>
+              <div class="form-group">
+                <select class="form-select" formControlName="subbranch">
+                  <option value="option">Sub branch</option>
+                </select>
+                <small class="text-danger"
+                  *ngIf="Position.controls['subbranch'].touched && Position.controls['subbranch'].invalid">
+                  <i class="bi bi-exclamation-circle"></i>
+                  This field is required
+                </small>
+              </div>
+              <mat-label>Grade</mat-label>
+              <div class="form-group">
+                <select class="form-select" formControlName="grade">
+                  <option value="option">Grade</option>
+                </select>
+                <small class="text-danger"
+                  *ngIf="Position.controls['grade'].touched && Position.controls['grade'].invalid">
+                  <i class="bi bi-exclamation-circle"></i>
+                  This field is required
+                </small>
+              </div>
+              </div>
+            <div class="profilesbtbtns">
+              <button mat-raised-button class="btn1">EDIT POSITION</button>
+            </div>
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="Document">
+        <div style="text-align:right ;">
+          <button class="adddocbtn" (click)="openDialog1('addnewdocument')">
+            <mat-icon style="margin-bottom: -6px;">add</mat-icon><b>Add document</b>
+          </button>
+        </div>
+  
+        <div class="row mattab3">
+          <div class="col-12 col-xl-2 col-lg-2 col-md-3 col-sm-4 doc">
+            <div class="docitem1">
+              <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="openDialog1('replacedocument')">
+                  <mat-icon>border_color</mat-icon>
+                  <span>Replace</span>
+                </button>
+                <button mat-menu-item (click)="openDialog('rename')">
+                  <mat-icon>text_fields</mat-icon>
+                  <span>Rename</span>
+                </button>
+                <button mat-menu-item>
+                  <mat-icon>visibility</mat-icon>
+                  <span>View</span>
+                </button>
+                <button mat-menu-item>
+                  <mat-icon>download</mat-icon>
+                  <span>Download</span>
+                </button>
+              </mat-menu>
+            </div>
+            <input #uploadFile type='file' style="display:none" />
+            <div class="docitem2" (click)="uploadFile.click()">
+              <img src="../../../../assets/images/pdfbig.png">
+              <p>Adhar Card</p>
+            </div>
+          </div>
+  
+          <div class="col-12 col-xl-2 col-lg-2 col-md-3 col-sm-4 doc">
+            <div class="docitem1">
+              <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="openDialog('replacedocument')">
+                  <mat-icon>border_color</mat-icon >
+                  <span>Replace</span>
+                </button>
+                <button mat-menu-item (click)="openDialog('rename')">
+                  <mat-icon>text_fields</mat-icon>
+                  <span>Rename</span>
+                </button>
+                <button mat-menu-item>
+                  <mat-icon>visibility</mat-icon>
+                  <span>View</span>
+                </button>
+                <button mat-menu-item>
+                  <mat-icon>download</mat-icon>
+                  <span>Download</span>
+                </button>
+              </mat-menu>
+            </div>
+            <input #uploadFile type='file' style="display:none" />
+            <div class="docitem2" (click)="uploadFile.click()">
+              <img src="../../../../assets/images/pdfbig.png">
+              <p>Photo</p>
+            </div>
+          </div>
+  
+          <div class="col-12 col-xl-2 col-lg-2 col-md-3 col-sm-4 doc">
+            <div class="docitem1">
+              <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="openDialog('replacedocument')" >
+                  <mat-icon>border_color</mat-icon>
+                  <span>Replace</span>
+                </button>
+                <button mat-menu-item (click)="openDialog('rename')">
+                  <mat-icon>text_fields</mat-icon>
+                  <span>Rename</span>
+                </button>
+                <button mat-menu-item>
+                  <mat-icon>visibility</mat-icon>
+                  <span>View</span>
+                </button>
+                <button mat-menu-item>
+                  <mat-icon>download</mat-icon>
+                  <span>Download</span>
+                </button>
+              </mat-menu>
+            </div>
+            <input #uploadFile type='file' style="display:none" />
+            <div class="docitem2" (click)="uploadFile.click()">
+              <img src="../../../../assets/images/pdfbig.png">
+              <p>Pan Card</p>
+            </div>
+          </div>
+  
+          <div class="col-12 col-xl-2 col-lg-2 col-md-3 col-sm-4 doc">
+            <div class="docitem1">
+              <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="openDialog('replacedocument')" >
+                  <mat-icon>border_color</mat-icon>
+                  <span>Replace</span>
+                </button>
+                <button mat-menu-item (click)="openDialog('rename')">
+                  <mat-icon>text_fields</mat-icon>
+                  <span>Rename</span>
+                </button>
+                <button mat-menu-item>
+                  <mat-icon>visibility</mat-icon>
+                  <span>View</span>
+                </button>
+                <button mat-menu-item>
+                  <mat-icon>download</mat-icon>
+                  <span>Download</span>
+                </button>
+              </mat-menu>
+            </div>
+            <input #uploadFile type='file' style="display:none" />
+            <div class="docitem2" (click)="uploadFile.click()">
+              <img src="../../../../assets/images/pdfbig.png">
+              <p>Address proof</p>
+            </div>
+          </div>
+  
+          <div class="col-12 col-xl-2 col-lg-2 col-md-3 col-sm-4 doc">
+            <div class="docitem1">
+              <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item >
+                  <mat-icon>border_color</mat-icon>
+                  <span>Replace</span>
+                </button>
+                <button mat-menu-item >
+                  <mat-icon>text_fields</mat-icon>
+                  <span>Rename</span>
+                </button>
+                <button mat-menu-item>
+                  <mat-icon>visibility</mat-icon>
+                  <span>View</span>
+                </button>
+                <button mat-menu-item>
+                  <mat-icon>download</mat-icon>
+                  <span>Download</span>
+                </button>
+              </mat-menu>
+            </div>
+            <input #uploadFile type='file' style="display:none" />
+            <div class="docitem2" (click)="uploadFile.click()">
+              <img src="../../../../assets/images/pdfbig.png">
+              <p>Educational certificate</p>
+            </div>
+          </div>
+  
+          <div class="col-12 col-xl-2 col-lg-2 col-md-3 col-sm-4 doc">
+            <div class="docitem1">
+              <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item >
+                  <mat-icon>border_color</mat-icon>
+                  <span>Replace</span>
+                </button>
+                <button mat-menu-item >
+                  <mat-icon>text_fields</mat-icon>
+                  <span>Rename</span>
+                </button>
+                <button mat-menu-item>
+                  <mat-icon>visibility</mat-icon>
+                  <span>View</span>
+                </button>
+                <button mat-menu-item>
+                  <mat-icon>download</mat-icon>
+                  <span>Download</span>
+                </button>
+              </mat-menu>
+            </div>
+            <input #uploadFile type='file' style="display:none" />
+            <div class="docitem2" (click)="uploadFile.click()">
+              <img src="../../../../assets/images/pdfbig.png">
+              <p>Pay slip</p>
+            </div>
+          </div>
+  
+          <div class="col-12 col-xl-2 col-lg-2 col-md-3 col-sm-4 doc">
+            <div class="docitem1">
+              <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item >
+                  <mat-icon>border_color</mat-icon>
+                  <span>Replace</span>
+                </button>
+                <button mat-menu-item >
+                  <mat-icon>text_fields</mat-icon>
+                  <span>Rename</span>
+                </button>
+                <button mat-menu-item>
+                  <mat-icon>visibility</mat-icon>
+                  <span>View</span>
+                </button>
+                <button mat-menu-item>
+                  <mat-icon>download</mat-icon>
+                  <span>Download</span>
+                </button>
+              </mat-menu>
+            </div>
+            <input #uploadFile type='file' style="display:none" />
+            <div class="docitem2" (click)="uploadFile.click()">
+              <img src="../../../../assets/images/pdfbig.png">
+              <p>Resume</p>
+            </div>
+          </div>
+  
+          <div class="col-12 col-xl-2 col-lg-2 col-md-3 col-sm-4 doc">
+            <div class="docitem1">
+              <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item >
+                  <mat-icon>border_color</mat-icon>
+                  <span>Replace</span>
+                </button>
+                <button mat-menu-item >
+                  <mat-icon>text_fields</mat-icon>
+                  <span>Rename</span>
+                </button>
+                <button mat-menu-item>
+                  <mat-icon>visibility</mat-icon>
+                  <span>View</span>
+                </button>
+                <button mat-menu-item>
+                  <mat-icon>download</mat-icon>
+                  <span>Download</span>
+                </button>
+              </mat-menu>
+            </div>
+            <input #uploadFile type='file' style="display:none" />
+            <div class="docitem2" (click)="uploadFile.click()">
+              <img src="../../../../assets/images/pdfbig.png">
+              <p>Bank Statement</p>
+            </div>
+          </div>
+  
+          <div class="col-12 col-xl-2 col-lg-2 col-md-3 col-sm-4 doc">
+            <div class="docitem1">
+              <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item >
+                  <mat-icon>border_color</mat-icon>
+                  <span>Replace</span>
+                </button>
+                <button mat-menu-item >
+                  <mat-icon>text_fields</mat-icon>
+                  <span>Rename</span>
+                </button>
+                <button mat-menu-item>
+                  <mat-icon>visibility</mat-icon>
+                  <span>View</span>
+                </button>
+                <button mat-menu-item>
+                  <mat-icon>download</mat-icon>
+                  <span>Download</span>
+                </button>
+              </mat-menu>
+            </div>
+            <input #uploadFile type='file' style="display:none" />
+            <div class="docitem2" (click)="uploadFile.click()">
+              <img src="../../../../assets/images/pdfbig.png">
+              <p>Employement service letter</p>
+            </div>
+          </div>
+  
+          <div class="col-12 col-xl-2 col-lg-2 col-md-3 col-sm-4 doc">
+            <div class="docitem1">
+              <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item >
+                  <mat-icon>border_color</mat-icon>
+                  <span>Replace</span>
+                </button>
+                <button mat-menu-item >
+                  <mat-icon>text_fields</mat-icon>
+                  <span>Rename</span>
+                </button>
+                <button mat-menu-item>
+                  <mat-icon>visibility</mat-icon>
+                  <span>View</span>
+                </button>
+                <button mat-menu-item>
+                  <mat-icon>download</mat-icon>
+                  <span>Download</span>
+                </button>
+              </mat-menu>
+            </div>
+            <input #uploadFile type='file' style="display:none" />
+            <div class="docitem2" (click)="uploadFile.click()">
+              <img src="../../../../assets/images/pdfbig.png">
+              <p>Appoinment acceptance</p>
+            </div>
+          </div>
+  
+          <div class="col-12 col-xl-2 col-lg-2 col-md-3 col-sm-4 doc">
+            <div class="docitem1">
+              <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item >
+                  <mat-icon>border_color</mat-icon>
+                  <span>Replace</span>
+                </button>
+                <button mat-menu-item >
+                  <mat-icon>text_fields</mat-icon>
+                  <span>Rename</span>
+                </button>
+                <button mat-menu-item>
+                  <mat-icon>visibility</mat-icon>
+                  <span>View</span>
+                </button>
+                <button mat-menu-item>
+                  <mat-icon>download</mat-icon>
+                  <span>Download</span>
+                </button>
+              </mat-menu>
+            </div>
+            <input #uploadFile type='file' style="display:none" />
+            <div class="docitem2" (click)="uploadFile.click()">
+              <img src="../../../../assets/images/pdfbig.png">
+              <p>KYC</p>
+            </div>
+          </div>
+        </div>
+  
+      </mat-tab>
+    </mat-tab-group>
+  </div>

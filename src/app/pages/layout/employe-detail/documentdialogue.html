@@ -1,0 +1,60 @@
+<div *ngIf="data.name=='addnewdocument'">
+    <div class="dialoguetop">
+        <h3>Add new document</h3>
+        <mat-icon class="dialogcancel" (click)=" onNoClick()">close</mat-icon>
+    </div>
+    <div class="form-group">
+        <mat-label>File Name</mat-label>
+        <input type="name" class="form-control" placeholder="">
+    </div>
+        <div (click)="uploadFile.click()" class="dialogufileselect">
+            <input #uploadFile type='file' style="display:none" />
+            <img src="../../../../assets/images/pdfbig.png">
+            <P>Upload Your File</P>
+            <small style="color:grey ;">JPG,PNG or PDF, file size no more than 10MB </small>
+        </div>
+    <div class="dialoguebuttons">
+        <button class="dialoguebtn1" (click)=" onNoClick()" >Cancel</button>
+        <button class="dialoguebtn2" >Save</button>
+    </div>
+</div>
+ 
+
+<div *ngIf="data.name=='replacedocument'">
+    <div class="dialoguetop">
+        <h3>Add replace document</h3>
+        <mat-icon class="dialogcancel" (click)=" onNoClick()">close</mat-icon>
+    </div>
+    <div class="form-group">
+        <mat-label>File Name</mat-label>
+        <input type="name" class="form-control" placeholder="">
+    </div>
+        <div (click)="uploadFile.click()" class="dialogufileselect">
+            <input #uploadFile type='file' style="display:none" />
+            <img src="../../../../assets/images/pdfbig.png">
+            <P>Replace Your File</P>
+            <small style="color:grey ;">JPG,PNG or PDF, file size no more than 10MB </small>
+        </div>
+    <div class="dialoguebuttons">
+        <button class="dialoguebtn1" (click)=" onNoClick()" >Cancel</button>
+        <button class="dialoguebtn2" >Save</button>
+    </div>
+</div>
+
+<div *ngIf="data.name=='rename'">   
+    <div class="dialoguetop">
+        <h3>Rename</h3>
+        <mat-icon class="dialogcancel" (click)=" onNoClick()">close</mat-icon>
+</div>
+    <p>Please enter your rename</p>
+    <div class="form-group">
+        <mat-label>File Name</mat-label>
+        <input type="name" class="form-control" placeholder="">
+    </div>
+    <div class="dialoguebuttons">
+        <button class="dialoguebtn1" (click)=" onNoClick()" >Cancel</button>
+        <button class="dialoguebtn2" >Save</button>
+    </div>
+</div>
+
+

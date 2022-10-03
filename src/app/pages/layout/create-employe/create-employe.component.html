@@ -11,16 +11,17 @@
         <h2>Details</h2>
     </div>
     <div>
-        <mat-stepper labelPosition="bottom" #stepper>
-            <mat-step [stepControl]="profile">
+    <mat-horizontal-stepper labelPosition="bottom" #stepper>
+        <ng-template matStepperIcon="edit"> <mat-icon>done</mat-icon> </ng-template>
+            <mat-step   editable="true">
                 <form [formGroup]="profile">
-                    <ng-template matStepLabel>Profile</ng-template>
+                    <ng-template  matStepLabel >Profile</ng-template>
                     <div class="row">
                         <div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12 ">
                             <div class="profileleft">
                                 <div class="row">
                                     <div class="col-12 col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                                        <div class="form-group">
+                                        <div class="form-group"> 
                                             <mat-label>Full Name</mat-label>
                                             <input type="name" class="form-control" formControlName="firstname"
                                                 placeholder="">
@@ -66,7 +67,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                        <mat-label> Choose a Date</mat-label>
+                                        <mat-label> Birth Date</mat-label>
                                         <div class="form-group">
                                             <input type="date" class="form-control" formControlName="dob"
                                                 placeholder="MM/DD/YYYY" formControlName="dob">
@@ -192,9 +193,9 @@
 
 
 
-            <mat-step [stepControl]="Status" optional>
+            <mat-step  optional>
                 <form [formGroup]="Status">
-                    <ng-template matStepLabel>Status</ng-template>
+                    <ng-template matStepLabel  >Status</ng-template>
                     <div class="row">
                         <div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12">
                             <div class="profileleft">
@@ -274,9 +275,9 @@
                     </div>
                 </form>
             </mat-step>
-            <mat-step [stepControl]="Position" optional>
+            <mat-step optional>
                 <form [formGroup]="Position">
-                    <ng-template matStepLabel>Position</ng-template>
+                    <ng-template matStepLabel  >Position</ng-template>
                     <div class="row">
                         <div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12">
                             <div class="positionleft">
@@ -418,9 +419,9 @@
 
                 </form>
             </mat-step>
-            <mat-step [stepControl]="Document" optional>
+            <mat-step  optional>
                 <form [formGroup]="Document">
-                    <ng-template matStepLabel>Document</ng-template>
+                    <ng-template matStepLabel  >Document</ng-template>
                     <div style="text-align:right ;">
                         <button mat-raised-button class="adddocbtn">
                             <mat-icon style="margin-top: -9px;">add</mat-icon><b>Add document</b>
@@ -567,7 +568,7 @@
                 </form>
             </mat-step>
 
-        </mat-stepper>
+        </mat-horizontal-stepper>
 
     </div>
 </div>

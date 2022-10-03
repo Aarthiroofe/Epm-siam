@@ -1,82 +1,228 @@
 .container-fluid{
-    padding:3% 3% 8% 3%;; background-color: #e9e7ea;
-    }
-label{
-    font-size: 20px;
+    margin-top: 6rem;
 }
-.item_1 h1{
-    margin: 1% 0% 2% 3%;
-    font-size: revert;
+  .profileimg{
+    height: 70px;
+    width: 70px;
+    border-radius: 50px;
+    margin: 14px;
+  }
+  .editpencil{
+     height: 28px;
+    width: 28px;
+    border-radius: 50px;
+    background-color: #FF383D;
+    padding: 4px;
+    margin-left: -25px;
+    margin-top: 38px;
+  }
+  .top{
+    background-color: #FF383D;
+    display: flex;
+  }
+  .topsub{
+    margin-top: 17px;
+    margin-left: 7px;
+    color: white;
+  }
+  .topsub h1{
+     margin-bottom: 1px;
+     font-weight: 500;
+  }
+  .topsub span {
+    font-size: medium;
+  }
+  .mattab{
+    width: 100%;
+    margin-top: 2rem;
+  }
+  .mattab1{
+    width: 100%;
+    margin-top: 2rem;
+  }
+  .profileleft{
+    border: 1px solid #e6d4d4;
+    border-radius: 5px;
+    padding: 20px;
+    width: 90%;
+    margin: 2% 2% 2% 4%;
+    
 }
-
-::ng-deep .mat-tab-label {
-    font-size: 20px;
+.profileright{
+    border: 1px solid #e6d4d4;
+    border-radius: 5px;
+    padding: 20px;
+    width: 90%;
+    margin: 2%;
+    height: 62%;
 }
-::ng-deep .mat-tab-body-content{
-    height: 100%;
-    overflow: initial !important;
+.formsub{
+    width: 31%;
 }
-.profileimg{
-    height: 150px;
-    width: 150px;
-    border-radius: 100px;
+.formsub2{
+    width: 31%;
+    margin-left: 4%;
 }
-.item_2{
-    text-align: center;
-    border: 2px solid grey;
-    border-radius: 10px;
-    margin: 20% 15% 10% 15%;
-    padding:6%;
-    background-color: #e9e7ea;
-}
-.item_2 h2{
-    margin-bottom: 0px;
-
-}
-td{
-    font-size: large;
-    line-height: 2.5rem;
-    width: 58%;
-}
-.editbtn{
-width: 45%;font-size: large; margin-top: 2rem; 
-}
-.uploadicon{
-    width: 3rem;
-    position: absolute;
-    margin: 2rem;
-    }
-.files{
-    // position: absolute;
-    width: 8rem;
-    height: 8rem;
-    margin: 3%;
-    background-color: #e9e7ea;
-}
-.row{
+.formflex{
     display: flex;
 }
-.adddocbtn{
-    width: 20%;
+.formsub3{
+    width: 49%;
+    margin-right: 2%;
 }
-.filebtn{
-    height: 100%;
-    width: 8rem;
-    background: transparent;
-    border: none;
+.formsub4{
+    width: 48%;
 }
-input[type=file]{
-    color:transparent;
-    width: 8rem;
-    height: 100%;
-z-index: 1;
-background: transparent;
+mat-label{
+    margin-left: 5px;
+    color: grey;
+    font-weight: 500;
+    }
+@media (min-width:763px) and (max-width:1073px){
+    mat-label{
+        margin-left: 0px;
+        font-size: 90%;
+    }
 }
-::file-selector-button {
-    display: none;
-  } 
+.form-group input{
+    height: 50px;
+    margin-top: 3px;
+}
+.form-group{
+    height: 65px;
+    margin-bottom: 8px;
+}
+.mattab1 .form-group{
+        height: 86px;
+        margin-bottom: 8px;
+}
+.form-select {
+    height: 50px;
+    margin-top: 3px;
+}
+.profilesbtbtns{
+    margin: 0% 8%;
+    text-align: right;
+}
+.btn1{
+    border-radius: 20px;
+    border: 2px solid red;
+    margin: 4% 2%;
+    color: red;
+}
+.positionright{
+    border: 1px solid #e6d4d4;
+    border-radius: 5px;
+    padding: 20px;
+    width: 90%;
+    margin: 2%;
+    height: 78%;
+}
+.positionleft{
+    border: 1px solid #e6d4d4;
+    border-radius: 5px;
+    padding: 20px;
+    width: 90%;
+    margin: 2% 2% 2% 4%;
+}
+.adddocbtn{    
+    color: red;
+    border-radius: 27px;
+    padding: 1% 2%;
+    border: 2px solid red;
+    margin: 30px 49px 30px 0px;
+    background: none;}
 
-  .fileupload{
-    background: whitesmoke;
-   
-  }
+    .doc{
+        margin: 1% 0% 2% 2%;
+        border: 2px solid #dedada;
+        border-radius: 4px;
+        padding: 0px 0px 20px 0px;
+    }
+    .docitem1{text-align:right ;
+        // margin-right: 20px;
+    }
+    
+    .docitem2{ text-align: center;
+        cursor: pointer;
+    }
+    
+    .docitem2 p{
+         padding: 10px 0px;
+          height: 44px; 
+          font-size: 11px;
+        margin-bottom: 0px;
+    }
+    .mattab3{
+        width: 100%;
+        padding-left: 8%;
+      }
+
+      ::ng-deep .mat-tab-list .mat-tab-labels .mat-tab-label-active {
+        color:red;
+        font-size: larger;
+        }
+        ::ng-deep .mat-ink-bar {
+            background-color:red !important;
+            }
+            ::ng-deep .mat-tab-label .mat-tab-label-content {
+                font-size: large;
+            }
+            .mat-menu-item:hover{
+                color: red;
+                mat-icon{
+                    color: red;
+                }
+            }
+            .mat-menu-item{
+                color: black;
+                mat-icon{
+                    color:black;
+                }
+            }
+
+             //dialogue
+
+ .dialoguetop{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+ }
+ .dialogcancel{
+    margin-top: -20px;margin-right: -20px;
+    border-radius: 25px ;
+    background-color: #E5E5E5;
+    cursor: pointer;
+ }
+ .dialogufileselect{
+    text-align: center;
+    border: 2px solid #d4cece;
+    border-style: dashed;
+    border-radius: 6px;
+    margin-top: 2rem;
+    padding: 8% 0%;
+ }
+.dialogufileselect p {
+    color: red;
+    margin-top: 15px;
+    font-weight: 500;
+}
+.dialoguebuttons{
+    margin-top: 2rem;
+    text-align: right;
+}
+.dialoguebtn1{
+    margin: 2px 13px;
+    border: 1px solid #e5d7d7;
+    border-radius: 5px;
+    padding: 0px 15px;
+
+}
+.dialoguebtn2{
+    margin: 2px 13px;
+    border: none;
+    border-radius: 5px;
+    padding: 0px 15px;
+    background-color: red;
+    color: white;
+}

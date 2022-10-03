@@ -15,6 +15,7 @@ const routes: Routes = [
   { path: 'employe-list', loadChildren: () => import('./employe-list/employe-list.module').then(m => m.EmployeListModule) },
   { path: 'employe-detail', loadChildren: () => import('./employe-detail/employe-detail.module').then(m => m.EmployeDetailModule) },
   { path: 'create-employe', loadChildren: () => import('./create-employe/create-employe.module').then(m => m.CreateEmployeModule) },
+  { path: 'userprofile', loadChildren: () => import('./userprofile/userprofile.module').then(m => m.UserprofileModule) },
 
    ]
   }];

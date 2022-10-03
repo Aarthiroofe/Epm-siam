@@ -46,25 +46,21 @@ export class LoginComponent implements OnInit {
   }
   submit(){
     if(this.login.valid){
-    this.router.navigate(['/menu'])
-
       {
         this.service.login(this.login.value)
           .subscribe((next) => {
-           
-            if (next.status == true) {
-              this.notificationService.showSuccess(next.message, "")
-              // this.router.navigate(['/menu'])
-             console.log(next);  
-             localStorage.setItem('token', next.token.toString());
+            if (next.success == true) {
+            localStorage.setItem('token', next.data.token);
+              this.notificationService.showSuccess(next.message,"");
+              this.router.navigate(['/menu']);
             }
-            else {
-              this.notificationService.showError(next.message, "")
+            else{
+              this.notificationService.showError(next.message,"");
             }
           }, (error) => {
-            this.notificationService.showError("We are facing issue. will resolve soon", "")
-    
-          });
+            this.notificationService.showError(error.error.message, "") 
+          }
+          );
       }
     }  
     else

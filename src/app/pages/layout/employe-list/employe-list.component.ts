@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, Inject, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort, Sort } from '@angular/material/sort';
@@ -8,6 +8,7 @@ import jsPDF from "jspdf";
 import html2canvas from 'html2canvas';
 import { Router } from '@angular/router';
 import {SelectionModel} from '@angular/cdk/collections';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-employe-list',
@@ -15,7 +16,7 @@ import {SelectionModel} from '@angular/cdk/collections';
   styleUrls: ['./employe-list.component.scss']
 })
 export class EmployeListComponent implements OnInit {
-  displayedColumns: string[] = ['select', 'FirstName', 'LastName', 'email', 'phone','Employeeid', 'employertype','Action' ];
+  displayedColumns: string[] = [ 'FirstName', 'LastName', 'email', 'phone','Employeeid', 'employertype','Action' ];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
   selection = new SelectionModel<PeriodicElement>(true, []);
   fileName = 'ExcelSheet.xlsx';
@@ -28,7 +29,7 @@ export class EmployeListComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.matSort;
   }
-  constructor(private router: Router,) { }
+  constructor(private router: Router,public dialog: MatDialog) { }
 
   ngOnInit(): void {
     // this.dataSource.sort = this.matSort;
@@ -87,10 +88,15 @@ export class EmployeListComponent implements OnInit {
   edit(element: any){
 
   }
-  delet(element: any){
-  }
+
   view(){
       this.router.navigate(['/layout/employe-detail'])
+  }
+  openDialog(): void {
+      const dialogRef = this.dialog.open(Deletedialogue, {
+        width: '300px',
+        height:'250px',
+      });
   }
 
 }
@@ -114,3 +120,22 @@ const ELEMENT_DATA: PeriodicElement[] = [
   { phoneno: 97863784848, FirstName: 'Banu', Employeeid: 984, LastName: 'F', email: 'arun@gmail.com', employertype: 'Internship' },
   { phoneno: 10874764474, FirstName: 'Kholi', Employeeid: 797, LastName: 'N', email: 'arun@gmail.com', employertype: 'Probation' },
 ];
+@Component({
+  selector: 'deletedialogue',
+  templateUrl: 'deletedialogue.html',
+  styleUrls: ['./employe-list.component.scss']
+})
+export class Deletedialogue implements OnInit{
+  
+  constructor(
+    public dialogRef: MatDialogRef<Document>,
+    @Inject(MAT_DIALOG_DATA) public data: any,
+  ) {}
+  ngOnInit(): void {
+    
+  }
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+}
