@@ -26,21 +26,22 @@
   
 }
 .profieimg{
-  height: 70px;
-    width: 70px;
+  height: 50px;
+    width: 50px;
     border-radius: 50px;
 }
 .right{
   margin-right: 2%;
-  cursor: pointer;
 }
 .expandicon{
   margin: 0px 2px;
 }
 .matmenuicon{
-  height: 35px;
-  margin: 0px;
+  height: 28px;
+  margin: 8px 0px 0px 0px;
   width: 34px;
+  font-size: 23px;
+  margin-top: 12px;
 }
 button.active{
   color: red;
@@ -48,4 +49,52 @@ button.active{
 }
 .mat-icon.active{
   color: red;
+}
+.rightsub{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+ .rightsub button{
+  padding: 0px 15px;
+  border: none;
+ }
+ .rightsub h3 {
+  padding-top: 9px;
+  padding-right: 22px;
+ }
+ .logout{
+  display: flex;
+  color: red;
+ }
+
+ 
+ .dialogueitem1{
+  text-align: center;
+ }
+ .dialoguebuttons{
+  margin-top: 1.5rem;
+  text-align: center;
+}
+.dialoguebtn1{
+  margin: 2px 13px;
+  border: 1px solid #e5d7d7;
+  border-radius: 5px;
+  padding: 0px 15px;
+  width: 70px;
+
+}
+.dialoguebtn2{
+  margin: 2px 13px;
+  border: none;
+  border-radius: 5px;
+  padding: 0px 15px;
+  background-color: red;
+  color: white;
+  width: 70px;
+}
+
+.dialogueitem1 h3{
+  margin-top: 15px;
+  font-weight: 600;
 }

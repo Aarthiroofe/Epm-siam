@@ -55,7 +55,7 @@ export class ActiveemployeeComponent implements OnInit {
         useSeriesColors:false
      },
        formatter : function(val:any,opts:any){
-       console.log(opts);
+      //  console.log(opts);
         return val+ opts.w.globals.series[opts.seriesIndex]+'%'
        }
        

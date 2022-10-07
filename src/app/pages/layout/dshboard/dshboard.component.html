@@ -2,50 +2,58 @@
 <div class="item_1">
    <h1>Dashboard</h1>
 </div>
-<div class="row">
+<div class="row" [formGroup]="filterform"> 
    <div class="col-12 col-xl-5 col-lg-5 col-md-5 col-sm-10 form-group">
-         <select class="form-select">
-             <option value="option">Employee Movement,Active employee</option>
-         </select>
+      <mat-form-field appearance="outline">
+         <mat-select  #select multiple formControlName="chartfilter" >
+           <mat-option (click)="optionClick()" *ngFor="let data of charts1" [value]="data" >
+             {{data.viewValue}}
+           </mat-option>
+         </mat-select>
+       </mat-form-field>   
 </div>
-<div class="col-12 col-xl-5 col-lg-5 col-md-5 col-sm-10 form-group">
-      <select class="form-select">
-          <option value="option">Monthly/year</option>
-      </select>
+<div class="col-12 col-xl-5 col-lg-5 col-md-5 col-sm-10 form-group" >
+      <mat-form-field appearance="outline">
+         <mat-select  >
+           <mat-option value="option"  >
+            Monthly/year
+           </mat-option>
+         </mat-select>
+       </mat-form-field>   
 </div>
 </div>
 
-<div class="row charts1">
-   <div class="col-12 col-xl-4 col-lg-4 col-md-4 col-sm-12 ">
+<div class="row charts1" *ngIf="charts2[0].check||charts2[1].check||charts2[2].check"  >
+   <div class="col-12 col-xl-4 col-lg-4 col-md-4 col-sm-12 " *ngIf="charts2[0].check" >
       <div class="item_2">
          <h2>Infant Attrition</h2>
          <app-infantattrition></app-infantattrition>
       </div>
    </div>
-   <div class="col-12 col-xl-4 col-lg-4 col-md-4 col-sm-12  " >
-      <div class="item_3">
+   <div class="col-12 col-xl-4 col-lg-4 col-md-4 col-sm-12  " *ngIf="charts2[1].check" >
+      <div class="item_3" >
          <h2>Employee Status</h2>
                <app-esr class="relive"></app-esr>
                <app-esc class="confirm"></app-esc>
             <app-esp class="probation"></app-esp>
       </div>
    </div>
-   <div class="col-12 col-xl-4 col-lg-4 col-md-4 col-sm-12 sub2">
-      <div class="item_2 sub">
+   <div class="col-12 col-xl-4 col-lg-4 col-md-4 col-sm-12 sub2" *ngIf="charts2[2].check">
+      <div class="item_2 sub" >
          <h2>Gender Ratio</h2>
          <app-genderratio></app-genderratio>
       </div>
    </div>
 </div>
 
-<div class="row charts2">
-   <div class="col-12 col-xl-5 col-lg-5 col-md-5 col-sm-12  ">
+<div class="row charts2" *ngIf="charts2[3].check||charts2[4].check">
+   <div class="col-12 col-xl-5 col-lg-5 col-md-5 col-sm-12  "*ngIf="charts2[3].check">
       <div class="item_4">
          <h2>Active Employee</h2>
          <app-activeemployee></app-activeemployee>
       </div>
    </div>
-   <div class="col-12 col-xl-7 col-lg-7 col-md-7 col-sm-12 ">
+   <div class="col-12 col-xl-7 col-lg-7 col-md-7 col-sm-12 "*ngIf="charts2[4].check">
       <div class="item_4">
          <h2>Employee movement</h2>
          <app-employeemovement></app-employeemovement>
@@ -53,14 +61,14 @@
    </div>
 </div>
 
-<div class="row charts3">
-   <div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12 yearofjoining">
+<div class="row charts3"  *ngIf="charts2[5].check||charts2[6].check">
+   <div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12 yearofjoining" *ngIf="charts2[5].check">
       <div class="item_4">
          <h2>Year of joining</h2>
          <app-yearofjoining></app-yearofjoining>
       </div>
    </div>
-   <div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12 yearofrelieving">
+   <div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12 yearofrelieving" *ngIf="charts2[6].check">
       <div class="item_4">
          <h2>Year of reliving</h2>
          <app-yearofrelieving></app-yearofrelieving>

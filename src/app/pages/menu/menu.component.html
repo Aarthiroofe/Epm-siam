@@ -12,14 +12,14 @@
         </mat-form-field>
    
           <div class="menuitems">
-            <div   (click)="dashboard()">
+            <div   routerLinkActive="active"  routerLink="/layout/dashboard">
               <div class="item1">
               <img class="icnimg"  src="../../../assets/images/analytics.png">
               </div>
               <p>Analytics</p>
             </div>
 
-            <div   (click)="employelist()" >
+            <div  routerLinkActive="active"  routerLink="/layout/employe-list">
               <div class="item1">
                 <img class="icnimg" src="../../../assets/images/people.png">
                 </div>
@@ -27,7 +27,7 @@
               	</div>
 
             <div  >
-             <div class="item1">
+             <div class="item1" routerLinkActive="active"  routerLink="/layout/settings">
                 <img class="icnimg1"  src="../../../assets/images/settings.png">
                 </div>
                 <p>Settings</p>

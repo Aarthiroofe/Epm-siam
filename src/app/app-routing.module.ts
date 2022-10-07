@@ -18,6 +18,7 @@ const routes: Routes = [
    canActivate:[AuthGuard]
    },
   { path: 'userprofile', loadChildren: () => import('./pages/layout/userprofile/userprofile.module').then(m => m.UserprofileModule) },
+  { path: 'settings', loadChildren: () => import('./pages/layout/settings/settings.module').then(m => m.SettingsModule) },
 ];
 
 

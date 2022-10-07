@@ -3,19 +3,15 @@
     <mat-icon  (click)="sideNavToggle()" >menu</mat-icon>
     <img class="logo" src="./assets/images/logoonlycrop.jpg">
 </div>
-<div class="right"  mat-button [matMenuTriggerFor]="aboveMenu" >
+<div class="right"  >
+  <div class="rightsub">
+    <button  class="list-group-item logout"  (click)="openDialog()">
+      <mat-icon  routerLinkActive="active" class="matmenuicon">power_settings_new</mat-icon>
+      <h3>Logout</h3>
+    </button>
+    <h3>Kalai A</h3>
     <img class="profieimg" src="../../../../../assets/images/profile.jpg">
-    <mat-icon class="expandicon">expand_more</mat-icon>
-    
-<mat-menu #aboveMenu="matMenu" yPosition="below">
-  <button mat-menu-item routerLinkActive="active" class="list-group-item" routerLink="/layout/userprofile">
-    <mat-icon   routerLinkActive="active"class="matmenuicon" >person</mat-icon>
-    <span >My Profile</span> 
-  </button> 
-  <button mat-menu-item routerLinkActive="active" class="list-group-item" routerLink="/login">
-    <mat-icon  routerLinkActive="active" class="matmenuicon">logout</mat-icon>
-    <span>Log out</span>
-  </button>
-</mat-menu>
+  </div>
 </div>
 </nav>
+

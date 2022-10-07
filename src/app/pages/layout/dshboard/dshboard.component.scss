@@ -11,6 +11,15 @@
     height: 50px;
     margin-top: 3px;
 }
+mat-form-field{
+    width: 100%;
+}
+::ng-deep .mat-option-pseudo-checkbox.mat-pseudo-checkbox-checked {
+    background-color: red;
+}
+::ng-deep .mat-option.mat-selected {
+    color: red !important;
+  }
 .relive{
     width: 25%;
     position: relative;
@@ -143,3 +152,4 @@ margin-top: 4%;
         border: 1px solid whitesmoke;
     }
 }
+

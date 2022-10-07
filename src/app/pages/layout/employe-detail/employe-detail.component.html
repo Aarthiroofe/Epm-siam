@@ -150,7 +150,9 @@
             </div>
           </div>
           <div class="profilesbtbtns">
-            <button mat-raised-button class="btn1">EDIT PROFILE</button>
+            <button mat-raised-button  class="btn1" *ngIf="editdata" (click)="edit()" (click)="profile.enable()">EDIT PROFILE</button>
+            <button mat-raised-button class="cancelbtn" *ngIf="canceldata" (click)="cancel()">Cancel</button>
+            <button mat-raised-button class="savebtn"*ngIf="savedata" (click)="save()" (click)="profile.disable()">save</button>
           </div>
         </div>
       </div>
@@ -223,7 +225,9 @@
             </div>
           </div>
           <div class="profilesbtbtns">
-            <button mat-raised-button class="btn1">EDIT STATUS</button>
+            <button mat-raised-button class="btn1" *ngIf="editdata" (click)="edit()" (click)="Status.enable()">EDIT STATUS</button>
+            <button mat-raised-button class="cancelbtn" *ngIf="canceldata" (click)="cancel()">Cancel</button>
+            <button mat-raised-button class="savebtn"*ngIf="savedata" (click)="save()" (click)="Status.disable()" >save</button>
           </div>
         </div>
       </div>
@@ -359,7 +363,9 @@
             </div>
             </div>
           <div class="profilesbtbtns">
-            <button mat-raised-button class="btn1">EDIT POSITION</button>
+            <button mat-raised-button class="btn1" *ngIf="editdata" (click)="edit()" (click)="Position.enable()">EDIT POSITION</button>
+            <button mat-raised-button class="cancelbtn" *ngIf="canceldata" (click)="cancel()">Cancel</button>
+            <button mat-raised-button class="savebtn"*ngIf="savedata" (click)="save()" (click)="Position.disable()">save</button>
           </div>
         </div>
       </div>

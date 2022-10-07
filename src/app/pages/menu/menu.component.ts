@@ -12,10 +12,5 @@ export class MenuComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  employelist(){
-    this.router.navigate(['/layout/employe-list'])
-  }
-  dashboard(){
-    this.router.navigate(['/layout/dashboard'])
-  }
+
 }

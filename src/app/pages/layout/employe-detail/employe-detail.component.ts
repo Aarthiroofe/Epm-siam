@@ -13,43 +13,45 @@ export class EmployeDetailComponent implements OnInit {
   Document: FormGroup;
   Status:FormGroup;
   Position : FormGroup;
-  
+  savedata : boolean = false;
+  canceldata:boolean = false;
+  editdata:boolean = true;
   
   constructor(public dialog: MatDialog) { 
 
     this.profile = new FormGroup({
-      firstname: new FormControl({value:'',disabled:false}, [Validators.required]),
-      middlename: new FormControl({value:'',disabled:false}, [Validators.required]),
-      lastname: new FormControl({value:'',disabled:false}, [Validators.required]),
-      workemail: new FormControl({value:'',disabled:false}, [Validators.required]),
-      dob: new FormControl({value:'',disabled:false}, [Validators.required]),
-      phone: new FormControl({value:'',disabled:false}, [Validators.required]),
-      gender: new FormControl({value:'',disabled:false}, [Validators.required]),
-      bloodgroup: new FormControl({value:'',disabled:false}, [Validators.required]),
-      Address: new FormControl({value:'',disabled:false}, [Validators.required]),
-      employeeid: new FormControl({value:'',disabled:false}, [Validators.required]),
-      skilltype: new FormControl({value:'',disabled:false}, [Validators.required]),
-      isdcode: new FormControl({value:'',disabled:false}, [Validators.required]),
+      firstname: new FormControl({value:'',disabled:true}, [Validators.required]),
+      middlename: new FormControl({value:'',disabled:true}, [Validators.required]),
+      lastname: new FormControl({value:'',disabled:true}, [Validators.required]),
+      workemail: new FormControl({value:'',disabled:true}, [Validators.required]),
+      dob: new FormControl({value:'',disabled:true}, [Validators.required]),
+      phone: new FormControl({value:'',disabled:true}, [Validators.required]),
+      gender: new FormControl({value:'',disabled:true}, [Validators.required]),
+      bloodgroup: new FormControl({value:'',disabled:true}, [Validators.required]),
+      Address: new FormControl({value:'',disabled:true}, [Validators.required]),
+      employeeid: new FormControl({value:'',disabled:true}, [Validators.required]),
+      skilltype: new FormControl({value:'',disabled:true}, [Validators.required]),
+      isdcode: new FormControl({value:'',disabled:true}, [Validators.required]),
     })
     this.Status = new FormGroup({
-      doj: new FormControl({value:'',disabled:false}, [Validators.required]),
-      doc: new FormControl({value:'',disabled:false}, [Validators.required]),
-      dor: new FormControl({value:'',disabled:false}, [Validators.required]),
-      emptype: new FormControl({value:'',disabled:false}, [Validators.required]),
-      empstatus: new FormControl({value:'',disabled:false}, [Validators.required]),
+      doj: new FormControl({value:'',disabled:true}, [Validators.required]),
+      doc: new FormControl({value:'',disabled:true}, [Validators.required]),
+      dor: new FormControl({value:'',disabled:true}, [Validators.required]),
+      emptype: new FormControl({value:'',disabled:true}, [Validators.required]),
+      empstatus: new FormControl({value:'',disabled:true}, [Validators.required]),
     }),
     this.Position = new FormGroup({
-      company: new FormControl({value:'',disabled:false}, [Validators.required]),
-      department: new FormControl({value:'',disabled:false}, [Validators.required]),
-      subdepartment: new FormControl({value:'',disabled:false}, [Validators.required]),
-      designation: new FormControl({value:'',disabled:false}, [Validators.required]),
-      region: new FormControl({value:'',disabled:false}, [Validators.required]),
-      level: new FormControl({value:'',disabled:false}, [Validators.required]),
-      reportingmanager: new FormControl({value:'',disabled:false}, [Validators.required]),
-      functionalmanager: new FormControl({value:'',disabled:false}, [Validators.required]),
-      branch: new FormControl({value:'',disabled:false}, [Validators.required]),
-      subbranch: new FormControl({value:'',disabled:false}, [Validators.required]),
-      grade: new FormControl({value:'',disabled:false}, [Validators.required]),
+      company: new FormControl({value:'',disabled:true}, [Validators.required]),
+      department: new FormControl({value:'',disabled:true}, [Validators.required]),
+      subdepartment: new FormControl({value:'',disabled:true}, [Validators.required]),
+      designation: new FormControl({value:'',disabled:true}, [Validators.required]),
+      region: new FormControl({value:'',disabled:true}, [Validators.required]),
+      level: new FormControl({value:'',disabled:true}, [Validators.required]),
+      reportingmanager: new FormControl({value:'',disabled:true}, [Validators.required]),
+      functionalmanager: new FormControl({value:'',disabled:true}, [Validators.required]),
+      branch: new FormControl({value:'',disabled:true}, [Validators.required]),
+      subbranch: new FormControl({value:'',disabled:true}, [Validators.required]),
+      grade: new FormControl({value:'',disabled:true}, [Validators.required]),
      
     }),
     
@@ -59,6 +61,21 @@ export class EmployeDetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+  edit(){
+    this.savedata=true
+    this.canceldata=true
+    this.editdata=false
+  }
+  cancel(){
+    this.savedata=false
+    this.canceldata=false
+    this.editdata=true
+  }
+  save(){
+    this.savedata=false
+    this.canceldata=false
+    this.editdata=true
   }
   openDialog(data:any): void {
     if(data=='rename'){
