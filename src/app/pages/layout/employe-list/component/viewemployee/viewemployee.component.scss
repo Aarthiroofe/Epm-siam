@@ -1,11 +1,12 @@
 .container-fluid{
-    margin-top: 6rem;
+    margin-top: 80px;
 }
   .profileimg{
-    height: 70px;
-    width: 70px;
+    height: 65px;
+    width: 65px;
     border-radius: 50px;
-    margin: 14px;
+    margin: 12px;
+    border: 2px solid red;
   }
   .editpencil{
      height: 28px;
@@ -13,17 +14,17 @@
     border-radius: 50px;
     background-color: #FF383D;
     padding: 4px;
-    margin-left: -25px;
+    margin-left: -30px;
     margin-top: 38px;
   }
   .top{
-    background-color: #FF383D;
+    background-color: #f6e0de;
     display: flex;
   }
   .topsub{
     margin-top: 17px;
     margin-left: 7px;
-    color: white;
+    color: black;
   }
   .topsub h1{
      margin-bottom: 1px;
@@ -73,12 +74,13 @@
     margin-top: 25px;
 }
 .formsub{
-    width: 31%;
+    width: 27%;
+    margin-left: 1%;
 }
-.formsub2{
-    width: 31%;
-    margin-left: 4%;
-}
+// .formsub2{
+//     width: 31%;
+//     margin-left: 1%;
+// }
 .formflex{
     display: flex;
 }
@@ -94,7 +96,7 @@ mat-label{
     color: grey;
     font-weight: 500;
     }
-@media (min-width:763px) and (max-width:1073px){
+@media (min-width:763px) and (max-width:1134px){
     mat-label{
         margin-left: 0px;
         font-size: 90%;

@@ -43,4 +43,9 @@ export class Logoutdialogue implements OnInit{
   onNoClick(): void {
     this.dialogRef.close();
   }
+  logout(){
+    localStorage.removeItem('token')
+    localStorage.removeItem('apps')
+    this.dialogRef.close();
+  }
 }

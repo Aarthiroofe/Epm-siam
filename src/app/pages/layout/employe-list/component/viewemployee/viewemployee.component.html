@@ -15,56 +15,68 @@
         <div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12 ">
           <div class="profileleft">
             <div class="formflex">
+                <div class="form-group">
+                    <mat-label>Prefix</mat-label>
+                    <select class="form-select" formControlName="prefix" >
+                        <option value="Mr">Mr</option>
+                        <option value="option">Ms</option>
+                        <option value="option">Mrs</option>
+                        <option value="option">Dr</option>
+                        <option value="option">Prof</option>
+                    </select>
+                </div>
               <div class="form-group formsub">
                 <mat-label>Full Name</mat-label>
-                <input type="name" class="form-control" formControlName="firstname" placeholder="">
+                <input type="name" class="form-control" formControlName="first_name" placeholder="">
                 <small class="text-danger"
-                  *ngIf="profile.controls['firstname'].touched && profile.controls['firstname'].invalid">
+                  *ngIf="profile.controls['first_name'].touched && profile.controls['first_name'].invalid">
                   <i class="bi bi-exclamation-circle"></i>
                   This field is required
                 </small>
+          
               </div>
-              <div class="form-group formsub2">
+              <div class="form-group formsub">
                 <mat-label>Middle Name</mat-label>
-                <input type="name" class="form-control" formControlName="middlename" placeholder="">
+                <input type="name" class="form-control" formControlName="middle_name" placeholder="">
                 <small class="text-danger"
-                  *ngIf="profile.controls['middlename'].touched && profile.controls['middlename'].invalid">
+                  *ngIf="profile.controls['middle_name'].touched && profile.controls['middle_name'].invalid">
                   <i class="bi bi-exclamation-circle"></i>
                   This field is required
                 </small>
               </div>
 
-              <div class="form-group formsub2">
+              <div class="form-group formsub">
                 <mat-label>Last Name</mat-label>
-                <input type="name" class="form-control" formControlName="lastname" placeholder="">
+                <input type="name" class="form-control" formControlName="last_name" placeholder="">
               </div>
             </div>
             <div>
               <div class="form-group">
                 <mat-label> Email</mat-label>
-                <input type="email" class="form-control" formControlName="workemail" placeholder="">
+                <input type="email" class="form-control" formControlName="work_mail" placeholder="">
                 <small class="text-danger"
-                  *ngIf="profile.controls['workemail'].touched && profile.controls['workemail'].invalid">
+                  *ngIf="profile.controls['work_mail'].touched && profile.controls['work_mail'].invalid">
                   <i class="bi bi-exclamation-circle"></i>
                   This field is required
                 </small>
+                <small class="text-danger"*ngIf="profile.controls['work_mail'].errors &&
+                profile.controls['work_mail'].errors['pattern']">Please Enter a valid email </small>
               </div>
             </div>
             <div class="formflex">
               <div class="form-group formsub3">
                 <mat-label>Birth Date</mat-label>
-                <input type="date" class="form-control" formControlName="dob" placeholder="MM/DD/YYYY"
-                  formControlName="dob">
-                <small class="text-danger" *ngIf="profile.controls['dob'].touched && profile.controls['dob'].invalid">
+                <input type="date" class="form-control" formControlName="date_of_birth" placeholder="MM/DD/YYYY">
+                <small class="text-danger" *ngIf="profile.controls['date_of_birth'].touched && profile.controls['date_of_birth'].invalid">
                   <i class="bi bi-exclamation-circle"></i>
                   This field is required
                 </small>
               </div>
               <div class="form-group formsub4">
                 <mat-label>Phone</mat-label>
-                <input type="num" formControlName="phone" class="form-control" placeholder="">
+                <input type="num" formControlName="mobile_number" class="form-control" placeholder="">
                 <small class="text-danger"
-                  *ngIf="profile.controls['phone'].touched && profile.controls['phone'].invalid">
+                  *ngIf="profile.controls['mobile_number'].touched && profile.controls['mobile_number'].invalid">
                   <i class="bi bi-exclamation-circle"></i>
                   This field is required
                 </small>
@@ -85,7 +97,7 @@
               </div>
               <div class="form-group formsub4">
                 <mat-label>Blood Group</mat-label>
-                <select class="form-select" formControlName="bloodgroup">
+                <select class="form-select" formControlName="blood_group">
                   <option value="option">A+ Ve</option>
                   <option value="option">A- Ve</option>
                   <option value="option">B+ Ve</option>
@@ -94,7 +106,7 @@
                   <option value="option">O- Ve</option>
                 </select>
                 <small class="text-danger"
-                  *ngIf="profile.controls['bloodgroup'].touched && profile.controls['bloodgroup'].invalid">
+                  *ngIf="profile.controls['blood_group'].touched && profile.controls['blood_group'].invalid">
                   <i class="bi bi-exclamation-circle"></i>
                   This field is required
                 </small>
@@ -117,10 +129,10 @@
           <div class="profileright">
             <div>
               <div class="form-group">
-                <mat-label>Employee ID</mat-label>
-                <input type="num" formControlName="employeeid" class="form-control" placeholder="">
+                <mat-label>Employee Code</mat-label>
+                <input type="num" formControlName="employee_code" class="form-control" placeholder="">
                 <small class="text-danger"
-                  *ngIf="profile.controls['employeeid'].touched && profile.controls['employeeid'].invalid">
+                  *ngIf="profile.controls['employee_code'].touched && profile.controls['employee_code'].invalid">
                   <i class="bi bi-exclamation-circle"></i>
                   This field is required
                 </small>
@@ -129,9 +141,9 @@
             <div>
               <div class="form-group">
                 <mat-label>Skilled type</mat-label>
-                <input type="text" formControlName="skilltype" class="form-control" placeholder="">
+                <input type="text" formControlName="skilled_type" class="form-control" placeholder="">
                 <small class="text-danger"
-                  *ngIf="profile.controls['skilltype'].touched && profile.controls['skilltype'].invalid">
+                  *ngIf="profile.controls['skilled_type'].touched && profile.controls['skilled_type'].invalid">
                   <i class="bi bi-exclamation-circle"></i>
                   This field is required
                 </small>
@@ -140,9 +152,9 @@
             <div>
               <div class="form-group">
                 <mat-label>ISD code</mat-label>
-                <input type="number" formControlName="isdcode" class="form-control" placeholder="">
+                <input type="number" formControlName="isd_code" class="form-control" placeholder="">
                 <small class="text-danger"
-                  *ngIf="profile.controls['isdcode'].touched && profile.controls['isdcode'].invalid">
+                  *ngIf="profile.controls['isd_code'].touched && profile.controls['isd_code'].invalid">
                   <i class="bi bi-exclamation-circle"></i>
                   This field is required
                 </small>
@@ -163,27 +175,24 @@
           <div class="profileleft">
             <mat-label>Date of joining</mat-label>
             <div class="form-group">
-              <input type="date" class="form-control" formControlName="doj" placeholder="MM/DD/YYYY"
-                formControlName="doj">
-              <small class="text-danger" *ngIf="Status.controls['doj'].touched && Status.controls['doj'].invalid">
+              <input type="date" class="form-control" formControlName="date_of_joining" placeholder="MM/DD/YYYY">
+              <small class="text-danger" *ngIf="Status.controls['date_of_joining'].touched && Status.controls['date_of_joining'].invalid">
                 <i class="bi bi-exclamation-circle"></i>
                 This field is required
               </small>
             </div>
             <mat-label>Date of confirmation</mat-label>
             <div class="form-group">
-              <input type="date" class="form-control" formControlName="doc" placeholder="MM/DD/YYYY"
-                formControlName="doc">
-              <small class="text-danger" *ngIf="Status.controls['doc'].touched && Status.controls['doc'].invalid">
+              <input type="date" class="form-control" formControlName="confirmation_date" placeholder="MM/DD/YYYY">
+              <small class="text-danger" *ngIf="Status.controls['confirmation_date'].touched && Status.controls['confirmation_date'].invalid">
                 <i class="bi bi-exclamation-circle"></i>
                 This field is required
               </small>
             </div>
-            <mat-label>Date of redignation</mat-label>
+            <mat-label>Date of resignation</mat-label>
             <div class="form-group">
-              <input type="date" class="form-control" formControlName="dor" placeholder="MM/DD/YYYY"
-                formControlName="dor">
-              <small class="text-danger" *ngIf="Status.controls['dor'].touched && Status.controls['dor'].invalid">
+              <input type="date" class="form-control" formControlName="date_of_resignation" placeholder="MM/DD/YYYY">
+              <small class="text-danger" *ngIf="Status.controls['date_of_resignation'].touched && Status.controls['date_of_resignation'].invalid">
                 <i class="bi bi-exclamation-circle"></i>
                 This field is required
               </small>
@@ -194,7 +203,7 @@
           <div class="profileright">
             <mat-label>Employement type</mat-label>
             <div class="form-group">
-              <select class="form-select" formControlName="emptype">
+              <select class="form-select" formControlName="employment_type">
                 <option value="option">Intern</option>
                 <option value="option"> Consultant </option>
                 <option value="option">Permanent</option>
@@ -202,7 +211,7 @@
                 <option value="option">Contractual</option>
               </select>
               <small class="text-danger"
-                *ngIf="Status.controls['emptype'].touched && Status.controls['emptype'].invalid">
+                *ngIf="Status.controls['employment_type'].touched && Status.controls['employment_type'].invalid">
                 <i class="bi bi-exclamation-circle"></i>
                 This field is required
               </small>
@@ -210,7 +219,7 @@
 
             <mat-label>Employement status</mat-label>
             <div class="form-group">
-              <select class="form-select" formControlName="empstatus">
+              <select class="form-select" formControlName="employment_status">
                 <option value="option">Probation</option>
                 <option value="option">Confirmed</option>
                 <option value="option">Settled</option>
@@ -218,7 +227,7 @@
                 <option value="option">Resigned</option>
               </select>
               <small class="text-danger"
-                *ngIf="Status.controls['empstatus'].touched && Status.controls['empstatus'].invalid">
+                *ngIf="Status.controls['employment_status'].touched && Status.controls['employment_status'].invalid">
                 <i class="bi bi-exclamation-circle"></i>
                 This field is required
               </small>
@@ -249,7 +258,6 @@
             <div class="form-group">
               <select class="form-select" formControlName="department">
                 <option value="option">Probation</option>
-
               </select>
               <small class="text-danger"
                 *ngIf="Position.controls['department'].touched && Position.controls['department'].invalid">
@@ -259,11 +267,11 @@
             </div>
             <mat-label>Sub department</mat-label>
             <div class="form-group">
-              <select class="form-select" formControlName="subdepartment">
+              <select class="form-select" formControlName="sub_department">
                 <option value="option">Probation</option>
               </select>
               <small class="text-danger"
-                *ngIf="Position.controls['subdepartment'].touched && Position.controls['subdepartment'].invalid">
+                *ngIf="Position.controls['sub_department'].touched && Position.controls['sub_department'].invalid">
                 <i class="bi bi-exclamation-circle"></i>
                 This field is required
               </small>
@@ -308,22 +316,22 @@
           <div class="positionright">
             <mat-label>Report manager</mat-label>
             <div class="form-group">
-              <select class="form-select" formControlName="reportingmanager">
+              <select class="form-select" formControlName="reporting_manager">
                 <option value="option">Report manager</option>
               </select>
               <small class="text-danger"
-                *ngIf="Position.controls['reportingmanager'].touched && Position.controls['reportingmanager'].invalid">
+                *ngIf="Position.controls['reporting_manager'].touched && Position.controls['reporting_manager'].invalid">
                 <i class="bi bi-exclamation-circle"></i>
                 This field is required
               </small>
             </div>
             <mat-label>Functional manager</mat-label>
             <div class="form-group">
-              <select class="form-select" formControlName="functionalmanager">
+              <select class="form-select" formControlName="functional_manager">
                 <option value="option">Functional manager</option>
               </select>
               <small class="text-danger"
-                *ngIf="Position.controls['functionalmanager'].touched && Position.controls['functionalmanager'].invalid">
+                *ngIf="Position.controls['functional_manager'].touched && Position.controls['functional_manager'].invalid">
                 <i class="bi bi-exclamation-circle"></i>
                 This field is required
               </small>
@@ -341,11 +349,11 @@
             </div>
             <mat-label>Sub branch</mat-label>
             <div class="form-group">
-              <select class="form-select" formControlName="subbranch">
+              <select class="form-select" formControlName="sub_branch">
                 <option value="option">Sub branch</option>
               </select>
               <small class="text-danger"
-                *ngIf="Position.controls['subbranch'].touched && Position.controls['subbranch'].invalid">
+                *ngIf="Position.controls['sub_branch'].touched && Position.controls['sub_branch'].invalid">
                 <i class="bi bi-exclamation-circle"></i>
                 This field is required
               </small>

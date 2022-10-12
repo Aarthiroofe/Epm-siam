@@ -54,9 +54,9 @@ export class LoginComponent implements OnInit {
               this.notificationService.showSuccess(next.message,"");
               this.router.navigate(['/menu']);
             }
-            else{
-              this.notificationService.showError(next.message,"");
-            }
+            // else{
+            //   this.notificationService.showError(next.message,"");
+            // }
           }, (error) => {
             this.notificationService.showError(error.error.message, "") 
           }

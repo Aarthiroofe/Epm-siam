@@ -1,45 +1,46 @@
 <div class="container-fluid">
-    <div class="row" style="padding-top: 4rem;height: 100%;">
-      <div class="col-12 col-xl-4 col-lg-4 col-md-4 col-sm-12">
-        <img class="menulogo" src="../../../assets/images/siamlogo.png">
-      </div>
-      
-      <div class="col-12 col-xl-4 col-lg-4 col-md-4 col-sm-12">
-          <mat-form-field appearance="outline" >
-            <input matInput type="search" placeholder="search">
-            <mat-icon matPrefix style="color:black ;">search</mat-icon>
-
-        </mat-form-field>
-   
-          <div class="menuitems">
-            <div   routerLinkActive="active"  routerLink="/layout/dashboard">
-              <div class="item1">
-              <img class="icnimg"  src="../../../assets/images/analytics.png">
+    <div class="row" style="padding-top: 2rem;height: 100%;">
+      <div class="col-12 col-xl-9 col-lg-9 col-md-9 col-sm-12">
+        <div class="row">
+          <div class="col-12 col-xl-4 col-lg-4 col-md-4 col-sm-12">
+          <img class="icnimg"  class="menulogo" src="../../../assets/images/siamlogo.png">
+          </div>
+          <div class="col-12 col-xl-8 col-lg-8 col-md-8 col-sm-12">
+            <mat-form-field appearance="fill" >
+              <input matInput type="search" placeholder="search">
+              <mat-icon matPrefix style="color:black ;">search</mat-icon>
+          </mat-form-field>
+          </div>
+        </div>
+          <div class="row">
+            <div class="recentapp">
+              <h2>RECENT USED APP</h2>
+              <div class="row recent" >
+               <div class="recenticon"[routerLink]="app.routing"  *ngFor="let app of addapps"   (click)="recentapp(app)" >
+                   <img class="icnimg"  class="icnimg"  [src]="app.icons">
+                   <p>{{app.name}}</p>
+               </div>
               </div>
-              <p>Analytics</p>
-            </div>
-
-            <div  routerLinkActive="active"  routerLink="/layout/employe-list">
-              <div class="item1">
-                <img class="icnimg" src="../../../assets/images/people.png">
-                </div>
-                <p>People</p>
-              	</div>
-
-            <div  >
-             <div class="item1" routerLinkActive="active"  routerLink="/layout/settings">
-                <img class="icnimg1"  src="../../../assets/images/settings.png">
-                </div>
-                <p>Settings</p>
-              	</div>
+               </div>
+          </div>
+          <div class="row">
+           <div class="myapp">
+            <h2>MY APP</h2> 
+            <div class="row recent"  >
+              <div class="appicon"  *ngFor="let item of menudatas" [routerLink]="item.routing"  (click)="myapp(item)">
+                  <img class="icnimg"  [src]="item.icons">
+                  <p>{{item.name}}</p>
+              </div>
+             </div>
+           </div>
           </div>
 
       </div>
-      <div class="col-12 col-xl-4 col-lg-4 col-md-4 col-sm-12 " style="padding:1%;">
+      <div class="col-12 col-xl-3 col-lg-3 col-md-3 col-sm-12 " style="padding:1%;">
         <div class="right">
           <h1>Notification</h1>
           <div class="rightcontent">
-            <img class="notifibell" src="../../../assets/images/notibell.png">
+            <img class="icnimg"  class="notifibell" src="../../../assets/images/notibell.png">
             <h2>No notifications Right now</h2>
           </div >
           <div class="row message">
@@ -55,10 +56,5 @@
           </div>
         </div>
         </div>
-    </div>
-    <div class="row">
-   
-      
-  
     </div>
   </div>

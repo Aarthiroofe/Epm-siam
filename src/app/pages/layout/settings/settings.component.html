@@ -1,163 +1,78 @@
 <div class="container-fluid">
-    <div class="top">
-        <div>
-          <img class="profileimg" src="../../../../assets/images/profile.jpg">
-          <img class="editpencil" src="../../../../assets/images/editpencil.png">
-        </div>
-        <div class="topsub">
-          <h1>Anu M <span>(Emp ID : 010)</span></h1>
-          <p>Product Designer</p>
-        </div>
-      </div>
-      <div class="body">
-        <h2>Password Setting</h2>
-        <h3 *ngIf="passchange3" class="item3">Please enter your current password to change your password.</h3>
-      </div>
-      <div class="row forms" >
-      <div [formGroup]="passwordchange"  class="formssub">
-        <div *ngIf="passchange1">
-          <mat-label>Current Password</mat-label>
-          <mat-form-field appearance="outline">
-              <input matInput type="password" [type]="showPassword ? 'text' : 'password'" formControlName="Currentpassword">
-              <mat-icon matSuffix class="my-icon" *ngIf="showPassword ==false" (click)="viewpass()">visibility
-              </mat-icon>
-              <mat-icon matSuffix class="my-icon" *ngIf="showPassword ==true" (click)="viewpass()">visibility_off
-              </mat-icon>
-              <mat-error>
-                  <div
-                      *ngIf="passwordchange.controls['Currentpassword'].touched && passwordchange.controls['Currentpassword'].invalid">
-                      Current Password is required</div>
-              </mat-error>
-          </mat-form-field>
-           <button class="btn2" (click)="openDialog()" >change</button>
-        </div>
-
-        <div *ngIf="passchange2">
-          <h3 style="font-weight: 500;">Enter email ID</h3>
-          <mat-label>Enter your email</mat-label>
-          <mat-form-field appearance="outline">
-            <input matInput type="password" [type]="showPassword1 ? 'text' : 'password'" formControlName="Currentpassword">
-            <mat-icon matSuffix class="my-icon" *ngIf="showPassword1 ==false" (click)="viewpass1()">visibility
-            </mat-icon>
-            <mat-icon matSuffix class="my-icon" *ngIf="showPassword1 ==true" (click)="viewpass1()">visibility_off
-            </mat-icon>
-            <mat-error>
-                <div
-                    *ngIf="passwordchange.controls['Currentpassword'].touched && passwordchange.controls['Currentpassword'].invalid">
-                    Current Password is required</div>
-            </mat-error>
-        </mat-form-field> 
-        <button class="btn3" (click)="changepass2()">Send</button>
-        </div>
-
-        <div *ngIf="passchange3">
-          <mat-label>Current Password</mat-label>
-          <mat-form-field appearance="outline">
-              <input matInput type="password" [type]="showPassword ? 'text' : 'password'" formControlName="Currentpassword">
-              <mat-icon matSuffix class="my-icon" *ngIf="showPassword ==false" (click)="viewpass()">visibility
-              </mat-icon>
-              <mat-icon matSuffix class="my-icon" *ngIf="showPassword ==true" (click)="viewpass()">visibility_off
-              </mat-icon>
-              <mat-error>
-                  <div
-                      *ngIf="passwordchange.controls['Currentpassword'].touched && passwordchange.controls['Currentpassword'].invalid">
-                      Current Password is required</div>
-              </mat-error>
-          </mat-form-field>
-
-          <mat-label>New Password</mat-label>
-          <mat-form-field appearance="outline">
-              <input matInput type="password" [type]="showPassword1 ? 'text' : 'password'" formControlName="newpassword">
-              <mat-icon matSuffix class="my-icon" *ngIf="showPassword1 ==false" (click)="viewpass1()">visibility
-              </mat-icon>
-              <mat-icon matSuffix class="my-icon" *ngIf="showPassword1==true" (click)="viewpass1()">visibility_off
-              </mat-icon>
-              <mat-error>
-                  <div
-                      *ngIf="passwordchange.controls['newpassword'].touched && passwordchange.controls['newpassword'].invalid">
-                      New Password is required</div>
-              </mat-error>
-          </mat-form-field>
-
-          <mat-label>Confirm Password</mat-label>
-          <mat-form-field appearance="outline">
-              <input matInput type="password" [type]="showPassword2 ? 'text' : 'password'" formControlName="confirmpassword">
-              <mat-icon matSuffix class="my-icon" *ngIf="showPassword2 ==false" (click)="viewpass2()">visibility
-              </mat-icon>
-              <mat-icon matSuffix class="my-icon" *ngIf="showPassword2==true" (click)="viewpass2()">visibility_off
-              </mat-icon>
-              <mat-error>
-                  <div
-                      *ngIf="passwordchange.controls['confirmpassword'].touched && passwordchange.controls['confirmpassword'].invalid">
-                    Confirm Password is required</div>
-              </mat-error>
-          </mat-form-field>
-        </div>
-      </div>
-      <div class="btns" *ngIf="passchange3">
-        <button class="btn1">cancel</button>
-        <button class="btn4" (click)="Opendialogue2()">save</button>
-       </div>
-      </div>
-
-
-
-
-
-
-
-
-
-
-
-      <!-- <div class="row forms" >
-        <div [formGroup]="passwordchange" class="formssub">
-          <mat-label>Current Password</mat-label>
-          <mat-form-field appearance="outline">
-              <input matInput type="password" [type]="showPassword ? 'text' : 'password'" formControlName="Currentpassword">
-              <mat-icon matSuffix class="my-icon" *ngIf="showPassword ==false" (click)="viewpass()">visibility
-              </mat-icon>
-              <mat-icon matSuffix class="my-icon" *ngIf="showPassword ==true" (click)="viewpass()">visibility_off
-              </mat-icon>
-              <mat-error>
-                  <div
-                      *ngIf="passwordchange.controls['Currentpassword'].touched && passwordchange.controls['Currentpassword'].invalid">
-                      Current Password is required</div>
-              </mat-error>
-          </mat-form-field>
-  
-          <mat-label>New Password</mat-label>
-          <mat-form-field appearance="outline">
-              <input matInput type="password" [type]="showPassword1 ? 'text' : 'password'" formControlName="newpassword">
-              <mat-icon matSuffix class="my-icon" *ngIf="showPassword1 ==false" (click)="viewpass1()">visibility
-              </mat-icon>
-              <mat-icon matSuffix class="my-icon" *ngIf="showPassword1==true" (click)="viewpass1()">visibility_off
-              </mat-icon>
-              <mat-error>
-                  <div
-                      *ngIf="passwordchange.controls['newpassword'].touched && passwordchange.controls['newpassword'].invalid">
-                      New Password is required</div>
-              </mat-error>
-          </mat-form-field>
-  
-          <mat-label>Confirm Password</mat-label>
-          <mat-form-field appearance="outline">
-              <input matInput type="password" [type]="showPassword2 ? 'text' : 'password'" formControlName="newpassword">
-              <mat-icon matSuffix class="my-icon" *ngIf="showPassword2 ==false" (click)="viewpass2()">visibility
-              </mat-icon>
-              <mat-icon matSuffix class="my-icon" *ngIf="showPassword2==true" (click)="viewpass2()">visibility_off
-              </mat-icon>
-              <mat-error>
-                  <div
-                      *ngIf="passwordchange.controls['newpassword'].touched && passwordchange.controls['newpassword'].invalid">
-                    Confirm Password is required</div>
-              </mat-error>
-          </mat-form-field>
-        </div>
-      </div>
-      <div class="btns">
-       <button class="btn1">cancel</button>
-       <button class="btn2">save</button>
-      </div> -->
-     
+      <mat-tab-group mat-align-tabs="start">
+        <mat-tab label="Password Setting">
+          <div class="row forms" >
+            <div [formGroup]="passwordchange"  class="formssub">
+              <div *ngIf="passchange1">
+                <mat-label>Current Password</mat-label>
+                <mat-form-field appearance="outline">
+                    <input matInput type="password" [type]="showPassword ? 'text' : 'password'" formControlName="Currentpassword">
+                    <mat-icon matSuffix class="my-icon" *ngIf="showPassword ==false" (click)="viewpass()">visibility
+                    </mat-icon>
+                    <mat-icon matSuffix class="my-icon" *ngIf="showPassword ==true" (click)="viewpass()">visibility_off
+                    </mat-icon>
+                    <mat-error>
+                        <div
+                            *ngIf="passwordchange.controls['Currentpassword'].touched && passwordchange.controls['Currentpassword'].invalid">
+                            Current Password is required</div>
+                    </mat-error>
+                </mat-form-field>
+                 <button class="btn2" (click)="openDialog()" >change</button>
+              </div>
+      
+              <div *ngIf="passchange2">
+                <h2 style="font-weight: 500;">Enter email ID</h2>
+                <mat-label>Enter your email</mat-label>
+                <mat-form-field appearance="outline">
+                  <input matInput type="password" [type]="showPassword1 ? 'text' : 'password'" formControlName="email">
+                  <mat-icon matSuffix class="my-icon" *ngIf="showPassword1 ==false" (click)="viewpass1()">visibility
+                  </mat-icon>
+                  <mat-icon matSuffix class="my-icon" *ngIf="showPassword1 ==true" (click)="viewpass1()">visibility_off
+                  </mat-icon>
+                  <mat-error>
+                      <div
+                          *ngIf="passwordchange.controls['email'].touched && passwordchange.controls['email'].invalid">
+                          Email is required</div>
+                  </mat-error>
+              </mat-form-field> 
+              <button class="btn3" (click)="changepass2()">Send</button>
+              </div>
+      
+              <div *ngIf="passchange3">
+                <mat-label>New Password</mat-label>
+                <mat-form-field appearance="outline">
+                    <input matInput type="password" [type]="showPassword1 ? 'text' : 'password'" formControlName="newpassword">
+                    <mat-icon matSuffix class="my-icon" *ngIf="showPassword1 ==false" (click)="viewpass1()">visibility
+                    </mat-icon>
+                    <mat-icon matSuffix class="my-icon" *ngIf="showPassword1==true" (click)="viewpass1()">visibility_off
+                    </mat-icon>
+                    <mat-error>
+                        <div
+                            *ngIf="passwordchange.controls['newpassword'].touched && passwordchange.controls['newpassword'].invalid">
+                            New Password is required</div>
+                    </mat-error>
+                </mat-form-field>
+      
+                <mat-label>Confirm Password</mat-label>
+                <mat-form-field appearance="outline">
+                    <input matInput type="password" [type]="showPassword2 ? 'text' : 'password'" formControlName="confirmpassword">
+                    <mat-icon matSuffix class="my-icon" *ngIf="showPassword2 ==false" (click)="viewpass2()">visibility
+                    </mat-icon>
+                    <mat-icon matSuffix class="my-icon" *ngIf="showPassword2==true" (click)="viewpass2()">visibility_off
+                    </mat-icon>
+                    <mat-error>
+                        <div
+                            *ngIf="passwordchange.controls['confirmpassword'].touched && passwordchange.controls['confirmpassword'].invalid">
+                          Confirm Password is required</div>
+                    </mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="btns" *ngIf="passchange3">
+              <button class="btn1">cancel</button>
+              <button class="btn4" (click)="Opendialogue2()">save</button>
+             </div>
+            </div>
+        </mat-tab>
+      </mat-tab-group>
 </div>

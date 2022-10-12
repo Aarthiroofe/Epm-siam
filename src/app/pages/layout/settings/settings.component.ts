@@ -21,6 +21,7 @@ export class SettingsComponent implements OnInit {
 
     this.passwordchange = new FormGroup({
       Currentpassword: new FormControl({value:'',disabled:false}, [Validators.required]),
+      email: new FormControl({value:'',disabled:false}, [Validators.required]),
       newpassword: new FormControl({value:'',disabled:false}, [Validators.required]),
       confirmpassword: new FormControl({value:'',disabled:false}, [Validators.required])
     });

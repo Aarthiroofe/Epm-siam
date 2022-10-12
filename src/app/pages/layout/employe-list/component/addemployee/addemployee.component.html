@@ -1,11 +1,6 @@
 <div class="container-fluid">
     <div class="item_1">
-        <h5>
-            <mat-icon>arrow_back</mat-icon> Employee detail
-        </h5>
-        <mat-icon>chevron_right</mat-icon>
-        <h3>Add profile</h3>
-        <mat-icon>chevron_right</mat-icon>
+        <h5><mat-icon style="font-size: 13px; padding-top: 7px;">arrow_back_ios</mat-icon> Employee details</h5> &nbsp; <h3>/ Add profile</h3>
     </div>
     <div class="item_2">
         <h2>Details</h2>
@@ -19,36 +14,48 @@
                     <div class="row">
                         <div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12 ">
                             <div class="profileleft">
-                                <div class="row">
-                                    <div class="col-12 col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                                <div class="row full" >
+                                    <div class="col-12 col-xl-2 col-lg-2 col-md-2 col-sm-12 name"  >
+                                        <div class="form-group">
+                                            <mat-label>Prefix</mat-label>
+                                            <select class="form-select" formControlName="prefix" required >
+                                                <option value="Mr">Mr</option>
+                                                <option value="option">Ms</option>
+                                                <option value="option">Mrs</option>
+                                                <option value="option">Dr</option>
+                                                <option value="option">Prof</option>
+                                            </select>
+                                        </div>
+                                      
+                                    </div>
+                                    <div class="col-12 col-xl-4 col-lg-4 col-md-4 col-sm-12 name">
                                         <div class="form-group"> 
                                             <mat-label>Full Name</mat-label>
-                                            <input type="name" class="form-control" formControlName="firstname"
-                                                placeholder="">
+                                            <input type="name" class="form-control" formControlName="first_name"  placeholder="" required>
                                             <small class="text-danger"
-                                                *ngIf="profile.controls['firstname'].touched && profile.controls['firstname'].invalid">
+                                                *ngIf="profile.controls['first_name'].touched && profile.controls['first_name'].invalid">
                                                 <i class="bi bi-exclamation-circle"></i>
                                                 This field is required
                                             </small>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                                    <div class="col-12 col-xl-3 col-lg-3 col-md-3 col-sm-12 name" >
                                         <div class="form-group">
                                             <mat-label>Middle Name</mat-label>
-                                            <input type="name" class="form-control" formControlName="middlename"
-                                                placeholder="">
+                                            <input type="name" class="form-control" formControlName="middle_name"placeholder="" required>
+                                                
                                             <small class="text-danger"
-                                                *ngIf="profile.controls['middlename'].touched && profile.controls['middlename'].invalid">
+                                                *ngIf="profile.controls['middle_name'].touched && profile.controls['middle_name'].invalid">
                                                 <i class="bi bi-exclamation-circle"></i>
                                                 This field is required
                                             </small>
                                         </div>
 
                                     </div>
-                                    <div class="col-12 col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                                    <div class="col-12 col-xl-3 col-lg-3 col-md-3 col-sm-12 name">
                                         <mat-label>Last Name</mat-label>
                                         <div class="form-group">
-                                            <input type="name" class="form-control" formControlName="lastname"
+                                            <input type="name" class="form-control" formControlName="last_name"
                                                 placeholder="">
                                         </div>
                                     </div>
@@ -56,23 +63,25 @@
                                 <div>
                                     <mat-label> Email</mat-label>
                                     <div class="form-group">
-                                        <input type="email" class="form-control" formControlName="workemail"
+                                        <input type="email" class="form-control" formControlName="work_mail"
                                             placeholder="">
                                         <small class="text-danger"
-                                            *ngIf="profile.controls['workemail'].touched && profile.controls['workemail'].invalid">
+                                            *ngIf="profile.controls['work_mail'].touched && profile.controls['work_mail'].invalid">
                                             <i class="bi bi-exclamation-circle"></i>
                                             This field is required
                                         </small>
+                                        <small class="text-danger"*ngIf="profile.controls['work_mail'].errors &&
+                                         profile.controls['work_mail'].errors['pattern']">Please Enter a valid email </small>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12">
                                         <mat-label> Birth Date</mat-label>
                                         <div class="form-group">
-                                            <input type="date" class="form-control" formControlName="dob"
-                                                placeholder="MM/DD/YYYY" formControlName="dob">
+                                            <input type="date" class="form-control" formControlName="date_of_birth"
+                                                placeholder="MM/DD/YYYY" formControlName="date_of_birth">
                                             <small class="text-danger"
-                                                *ngIf="profile.controls['dob'].touched && profile.controls['dob'].invalid">
+                                                *ngIf="profile.controls['date_of_birth'].touched && profile.controls['date_of_birth'].invalid">
                                                 <i class="bi bi-exclamation-circle"></i>
                                                 This field is required
                                             </small>
@@ -81,10 +90,10 @@
                                     <div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12">
                                         <mat-label>Phone</mat-label>
                                         <div class="form-group">
-                                            <input type="num" formControlName="phone" class="form-control"
+                                            <input type="number" formControlName="mobile_number" class="form-control"
                                                 placeholder="">
                                             <small class="text-danger"
-                                                *ngIf="profile.controls['phone'].touched && profile.controls['phone'].invalid">
+                                                *ngIf="profile.controls['mobile_number'].touched && profile.controls['mobile_number'].invalid">
                                                 <i class="bi bi-exclamation-circle"></i>
                                                 This field is required
                                             </small>
@@ -109,7 +118,7 @@
                                     <div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12">
                                         <mat-label>Blood Group</mat-label>
                                         <div class="form-group">
-                                            <select class="form-select" formControlName="bloodgroup">
+                                            <select class="form-select" formControlName="blood_group">
                                                 <option value="option">A+ Ve</option>
                                                 <option value="option">A- Ve</option>
                                                 <option value="option">B+ Ve</option>
@@ -118,7 +127,7 @@
                                                 <option value="option">O- Ve</option>
                                             </select>
                                             <small class="text-danger"
-                                                *ngIf="profile.controls['bloodgroup'].touched && profile.controls['bloodgroup'].invalid">
+                                                *ngIf="profile.controls['blood_group'].touched && profile.controls['blood_group'].invalid">
                                                 <i class="bi bi-exclamation-circle"></i>
                                                 This field is required
                                             </small>
@@ -141,12 +150,12 @@
                         <div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12 ">
                             <div class="profileright">
                                 <div>
-                                    <mat-label>Employee ID</mat-label>
+                                    <mat-label>Employee Code</mat-label>
                                     <div class="form-group">
-                                        <input type="num" formControlName="employeeid" class="form-control"
+                                        <input type="num" formControlName="employee_code" class="form-control"
                                             placeholder="">
                                         <small class="text-danger"
-                                            *ngIf="profile.controls['employeeid'].touched && profile.controls['employeeid'].invalid">
+                                            *ngIf="profile.controls['employee_code'].touched && profile.controls['employee_code'].invalid">
                                             <i class="bi bi-exclamation-circle"></i>
                                             This field is required
                                         </small>
@@ -155,10 +164,10 @@
                                 <div>
                                     <mat-label>Skilled type</mat-label>
                                     <div class="form-group">
-                                        <input type="text" formControlName="skilltype" class="form-control"
+                                        <input type="text" formControlName="skilled_type" class="form-control"
                                             placeholder="">
                                         <small class="text-danger"
-                                            *ngIf="profile.controls['skilltype'].touched && profile.controls['skilltype'].invalid">
+                                            *ngIf="profile.controls['skilled_type'].touched && profile.controls['skilled_type'].invalid">
                                             <i class="bi bi-exclamation-circle"></i>
                                             This field is required
                                         </small>
@@ -167,32 +176,32 @@
                                 <div>
                                     <mat-label>ISD code</mat-label>
                                     <div class="form-group">
-                                        <input type="number" formControlName="isdcode" class="form-control"
+                                        <input type="number" formControlName="isd_code" class="form-control"
                                             placeholder="">
                                         <small class="text-danger"
-                                            *ngIf="profile.controls['isdcode'].touched && profile.controls['isdcode'].invalid">
+                                            *ngIf="profile.controls['isd_code'].touched && profile.controls['isd_code'].invalid">
                                             <i class="bi bi-exclamation-circle"></i>
                                             This field is required
                                         </small>
                                     </div>
                                 </div>
                             </div>
+                            <div>
+                                <input type="checkbox" id="logingenerate"  value="Bike" formControlName="create_user">
+                                <label class="logcheck" for="logingenerate"> Generate login</label><br>
+                            </div>
+
                             <div class="profilesbtbtns">
                                 <button mat-raised-button class="btn1" style="color:grey;background-color: none;"
                                     (click)="stepper.reset()">Cancel</button>
                                 <button mat-raised-button class="btn1" style="color:white;background-color:red"
-                                    matStepperNext>Save</button>
+                                   (click)="profiledata()" >Save&Continue</button>
                             </div>
                         </div>
                     </div>
 
                 </form>
             </mat-step>
-
-
-
-
-
             <mat-step  optional>
                 <form [formGroup]="Status">
                     <ng-template matStepLabel  >Status</ng-template>
@@ -201,30 +210,27 @@
                             <div class="profileleft">
                                 <mat-label>Date of joining</mat-label>
                                 <div class="form-group">
-                                    <input type="date" class="form-control" formControlName="doj"
-                                        placeholder="MM/DD/YYYY" formControlName="doj">
+                                    <input type="date" class="form-control" formControlName="date_of_joining" placeholder="MM/DD/YYYY">
                                     <small class="text-danger"
-                                        *ngIf="Status.controls['doj'].touched && Status.controls['doj'].invalid">
+                                        *ngIf="Status.controls['date_of_joining'].touched && Status.controls['date_of_joining'].invalid">
                                         <i class="bi bi-exclamation-circle"></i>
                                         This field is required
                                     </small>
                                 </div>
                                 <mat-label>Date of confirmation</mat-label>
                                 <div class="form-group">
-                                    <input type="date" class="form-control" formControlName="doc"
-                                        placeholder="MM/DD/YYYY" formControlName="doc">
+                                    <input type="date" class="form-control" formControlName="confirmation_date" placeholder="MM/DD/YYYY">
                                     <small class="text-danger"
-                                        *ngIf="Status.controls['doc'].touched && Status.controls['doc'].invalid">
+                                        *ngIf="Status.controls['confirmation_date'].touched && Status.controls['confirmation_date'].invalid">
                                         <i class="bi bi-exclamation-circle"></i>
                                         This field is required
                                     </small>
                                 </div>
-                                <mat-label>Date of redignation</mat-label>
+                                <mat-label>Date of resignation</mat-label>
                                 <div class="form-group">
-                                    <input type="date" class="form-control" formControlName="dor"
-                                        placeholder="MM/DD/YYYY" formControlName="dor">
+                                    <input type="date" class="form-control" formControlName="date_of_resignation"placeholder="MM/DD/YYYY" >
                                     <small class="text-danger"
-                                        *ngIf="Status.controls['dor'].touched && Status.controls['dor'].invalid">
+                                        *ngIf="Status.controls['date_of_resignation'].touched && Status.controls['date_of_resignation'].invalid">
                                         <i class="bi bi-exclamation-circle"></i>
                                         This field is required
                                     </small>
@@ -235,7 +241,7 @@
                             <div class="profileright">
                                 <mat-label>Employement type</mat-label>
                                 <div class="form-group">
-                                    <select class="form-select" formControlName="emptype">
+                                    <select class="form-select" formControlName="employment_type">
                                         <option value="option">Intern</option>
                                         <option value="option"> Consultant </option>
                                         <option value="option">Permanent</option>
@@ -243,7 +249,7 @@
                                         <option value="option">Contractual</option>
                                     </select>
                                     <small class="text-danger"
-                                        *ngIf="Status.controls['emptype'].touched && Status.controls['emptype'].invalid">
+                                        *ngIf="Status.controls['employment_type'].touched && Status.controls['employment_type'].invalid">
                                         <i class="bi bi-exclamation-circle"></i>
                                         This field is required
                                     </small>
@@ -251,7 +257,7 @@
 
                                 <mat-label>Employement status</mat-label>
                                 <div class="form-group">
-                                    <select class="form-select" formControlName="empstatus">
+                                    <select class="form-select" formControlName="employment_status">
                                         <option value="option">Probation</option>
                                         <option value="option">Confirmed</option>
                                         <option value="option">Settled</option>
@@ -259,7 +265,7 @@
                                         <option value="option">Resigned</option>
                                     </select>
                                     <small class="text-danger"
-                                        *ngIf="Status.controls['empstatus'].touched && Status.controls['empstatus'].invalid">
+                                        *ngIf="Status.controls['employment_status'].touched && Status.controls['employment_status'].invalid">
                                         <i class="bi bi-exclamation-circle"></i>
                                         This field is required
                                     </small>
@@ -267,9 +273,9 @@
                             </div>
                             <div class="profilesbtbtns">
                                 <button mat-raised-button class="btn1" style="color:grey;background-color: none;"
-                                    (click)="stepper.reset()">Back</button>
+                                    (click)="stepper.reset()" matStepperPrevious>Back</button>
                                 <button mat-raised-button class="btn1" style="color:white;background-color:red"
-                                    matStepperNext>Save</button>
+                                    matStepperNext>Save&Continue    </button>
                             </div>
                         </div>
                     </div>
@@ -304,11 +310,11 @@
                                 </div>
                                 <mat-label>Sub department</mat-label>
                                 <div class="form-group">
-                                    <select class="form-select" formControlName="subdepartment">
+                                    <select class="form-select" formControlName="sub_department">
                                         <option value="option">Probation</option>
                                     </select>
                                     <small class="text-danger"
-                                        *ngIf="Position.controls['subdepartment'].touched && Position.controls['subdepartment'].invalid">
+                                        *ngIf="Position.controls['sub_department'].touched && Position.controls['sub_department'].invalid">
                                         <i class="bi bi-exclamation-circle"></i>
                                         This field is required
                                     </small>
@@ -353,22 +359,22 @@
                             <div class="positionright">
                                 <mat-label>Report manager</mat-label>
                                 <div class="form-group">
-                                    <select class="form-select" formControlName="reportingmanager">
+                                    <select class="form-select" formControlName="reporting_manager">
                                         <option value="option">Report manager</option>
                                     </select>
                                     <small class="text-danger"
-                                        *ngIf="Position.controls['reportingmanager'].touched && Position.controls['reportingmanager'].invalid">
+                                        *ngIf="Position.controls['reporting_manager'].touched && Position.controls['reporting_manager'].invalid">
                                         <i class="bi bi-exclamation-circle"></i>
                                         This field is required
                                     </small>
                                 </div>
                                 <mat-label>Functional manager</mat-label>
                                 <div class="form-group">
-                                    <select class="form-select" formControlName="functionalmanager">
+                                    <select class="form-select" formControlName="functional_manager">
                                         <option value="option">Functional manager</option>
                                     </select>
                                     <small class="text-danger"
-                                        *ngIf="Position.controls['functionalmanager'].touched && Position.controls['functionalmanager'].invalid">
+                                        *ngIf="Position.controls['functional_manager'].touched && Position.controls['functional_manager'].invalid">
                                         <i class="bi bi-exclamation-circle"></i>
                                         This field is required
                                     </small>
@@ -386,11 +392,11 @@
                                 </div>
                                 <mat-label>Sub branch</mat-label>
                                 <div class="form-group">
-                                    <select class="form-select" formControlName="subbranch">
+                                    <select class="form-select" formControlName="sub_branch">
                                         <option value="option">Sub branch</option>
                                     </select>
                                     <small class="text-danger"
-                                        *ngIf="Position.controls['subbranch'].touched && Position.controls['subbranch'].invalid">
+                                        *ngIf="Position.controls['sub_branch'].touched && Position.controls['sub_branch'].invalid">
                                         <i class="bi bi-exclamation-circle"></i>
                                         This field is required
                                     </small>
@@ -410,9 +416,9 @@
                             </div>
                             <div class="profilesbtbtns">
                                 <button mat-raised-button class="btn1" style="color:grey;background-color: none;"
-                                    (click)="stepper.reset()">Back</button>
+                                    (click)="stepper.reset()"matStepperPrevious>Back</button>
                                 <button mat-raised-button class="btn1" style="color:white;background-color:red"
-                                    matStepperNext>Save</button>
+                                    matStepperNext>Save&Continue</button>
                             </div>
                         </div>
                     </div>

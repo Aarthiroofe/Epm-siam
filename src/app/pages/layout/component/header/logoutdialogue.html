@@ -4,6 +4,6 @@
   <p>You want to logout</p>
   <div class="dialoguebuttons">
     <button class="dialoguebtn1" (click)=" onNoClick()" >Cancel</button>
-    <button class="dialoguebtn2" routerLink="/login"  >Logout</button>
+    <button class="dialoguebtn2" routerLink="/login" (click)="logout()" mat-dialog-close=True  cdkFocusInitial >Logout</button>
 </div>
 </div>

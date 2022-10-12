@@ -45,11 +45,6 @@ export class EmployeListComponent implements OnInit {
     this.matSort.direction = sortState.direction;
     this.matSort.sortChange.emit(sortState);
   }
-
-  addemploye(){
-    this.router.navigate(['/layout/create-employe'])
-  }
-
   isAllSelected() {
     const numSelected = this.selection.selected.length;
     const numRows = this.dataSource.data.length;
@@ -90,7 +85,7 @@ export class EmployeListComponent implements OnInit {
   }
 
   view(){
-      this.router.navigate(['/layout/employe-detail'])
+      this.router.navigate(['/layout/employe-list/viewemployee'])
   }
   openDialog(): void {
       const dialogRef = this.dialog.open(Deletedialogue, {

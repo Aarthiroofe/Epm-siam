@@ -10,28 +10,12 @@
           <input matInput (keyup)="applyFilter($event)" #input placeholder=" search" >
         </mat-form-field>
         <button mat-raised-button class="btn1" (click)="openPDF()" > <mat-icon style="margin-top: -4px;">download</mat-icon><b>Download PDF</b></button>
-        <button mat-raised-button class="btn"(click)="addemploye()" >	<mat-icon style="margin-top: -4px;">add</mat-icon><b>Add employee</b></button>
+        <button mat-raised-button class="btn"  routerLink="/layout/employe-list/addemployee"  >	<mat-icon style="margin-top: -4px;">add</mat-icon><b>Add employee</b></button>
+      
     </div>
   </div>
     <div class="row">
         <table mat-table [dataSource]="dataSource"    id="employee-list-data">
-          eaesa
-     <!-- Checkbox Column -->
-  <!-- <ng-container matColumnDef="select">
-    <th mat-header-cell  *matHeaderCellDef>
-      <mat-checkbox (change)="$event ? masterToggle() : null"
-                    [checked]="selection.hasValue() && isAllSelected()"
-                    [indeterminate]="selection.hasValue() && !isAllSelected()">
-      </mat-checkbox>
-    </th>
-    <td mat-cell *matCellDef="let row">
-      <mat-checkbox (click)="$event.stopPropagation()"
-                    (change)="$event ? selection.toggle(row) : null"
-                    [checked]="selection.isSelected(row)">
-      </mat-checkbox>
-    </td>
-  </ng-container> -->
-       
              <!-- firstname -->
               <ng-container matColumnDef="FirstName">
                 <th mat-header-cell  *matHeaderCellDef > First name </th>

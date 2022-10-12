@@ -1,85 +1,121 @@
 .container-fluid{
-    background-image: url(../../../assets/images/back.png);
+    background-image: url(../../../assets/images/homeback.png);
     height: 100%; 
-    background-size: cover;
+    background-size: 100% 100%;
   background-position: center;
    background-repeat: no-repeat;
+  //  min-height: 698px;
   //  color: white;
 
 }
 .menulogo{
-  height: 90px;
-    width: 180px;
-    margin-left: 6%;
+  height: auto;
+    width: auto;
+    margin-left: 10%;
 }
-.form-control{
-    margin-top: 1.5rem;
-    height: 50px;
-    border: 1px solid grey;
-    border-radius: 10px;
+.recentapp{
+  border: 2px solid #E5E5E5;
+  width: 93%;
+  margin: 2% 0% 2% 4%;
+  border-radius: 10px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+border-radius: 5px;
 }
-.menuitems{
-  margin-top: 6rem;
+.recent{
+  padding: 1%;
   display: flex;
-  justify-content: space-between;
 }
-.menuitems p{
-  text-align: center;
-  margin-top: 20%;
-  color: white;
+.recentapp h2{
+  padding: 1% 0% 0% 2%;
+    margin-bottom: 0%;
+    font-weight: 500;
+    color: #4E4D4D;
+}
+.recenticon{
+  width: 70px;
+  height: 70px;
+background: white;
+box-shadow: 0px 0px 4px rgba(181, 181, 181, 0.25);
+border-radius: 7px;
+margin: 1% 2%;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+}
+.recenticon p{
+  padding-top: 10px;
+  font-weight: 500;
+  margin-bottom: 0px; 
+}
+.appicon{
+  width: 95px;
+  height: 95px;
+background: white;
+box-shadow: 0px 0px 4px rgba(181, 181, 181, 0.25);
+border-radius: 7px;
+margin: 1% 2%;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+}
+.appicon p{
+  padding-top: 10px;
+  font-weight: 500;
+  margin-bottom: 0px; 
+}
+.myapp{
+  border: 2px solid #E5E5E5;
+  width: 93%;
+  margin: 0% 0% 0% 4%;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+border-radius: 5px;
+height: 21rem;
 }
 .icnimg{
-  width: 40px;
-  height: 40px;
+  height: 30px;
+  width: 30px;
 }
-.item1{
-  width: 90px;
-  height: 90px;
-  background-color: white;
-  border-radius: 50px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
+.myapp h2{
+  padding: 1% 0% 0% 2%;
+    margin-bottom: 0%;
+    font-weight: 500;
+    color: #4E4D4D;
 }
-@media(max-width:768px){
-  
-  .menuitems{
-    margin-top: 4rem;
-    justify-content: space-around;
-  }
+@media(max-width:768px){  
   mat-form-field{
     padding: 0% 9%;
+width: 100%;
   }
 }
-@media(max-width:992px){
-  .item1{
-    width: 70px;
-    height: 70px;
-  }
+::ng-deep .mat-form-field-underline{
+  display: none;
 }
-::ng-deep .mat-form-field-wrapper{
-  padding: 0px !important;
-  margin: 0px !important;
-  background: white;
-  border: 1px solid grey;
-  border-radius: 15px 15px 15px 15px !important;
-}
-mat-form-field{
-  width: 100%;
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex{
+  background: #F3F3F3;
+  border-radius: 2rem !important;
 }
 ::placeholder{
   font-size: large;
   color: rgb(43, 42, 42);
 }
+mat-form-field{
+width: 90%;
+}
+::ng-deep  .mat-form-field-infix{
+  bottom: 6px;
+}
 
 .right{
-  background: rgba(255, 255, 255, 0.1);
   border-radius: 7px;
-  height: 100%;
-  margin: 0% 5% 0% 15%;
-  color: white;
+  height: 90%;
+  margin: 0% 5% 0% 0%;
+  color: #1F1F1F;
+  background: rgba(193, 190, 190, 0.1);
+border-radius: 10px;
 }
 
 .rightcontent{
@@ -92,6 +128,7 @@ mat-form-field{
 .right h1{
     margin-left: 8%;
     padding-top: 5%;
+    font-weight: 500;
 }
 
 @media (min-width:200px)and (max-width:768px){
@@ -105,6 +142,7 @@ mat-form-field{
 .rightcontent h2{
   padding: 0% 23%;
   text-align: center;
+  font-weight: 500;
 }
 
 .message{

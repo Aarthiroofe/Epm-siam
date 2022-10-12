@@ -52,10 +52,32 @@ mat-icon{margin-bottom: -6px;}
     width: 90%;
     margin: 2% 2% 2% 4%;
 }
+.full{
+    padding: 0px 12px;
+}
+.name{
+    padding: 0px 2px;
+}
+.logcheck{
+    margin-left: 10px;
+    background: none;
+    border: none;
+    display:initial;
+}
+input[type=checkbox] {
+    accent-color: green;
+    height: 15px;
+    width: 20px;
+  }
 mat-label{
     margin-left: 5px;
     color: grey;
     font-weight: 500;
+}
+@media(min-width:767px) and (max-width:1205px){
+    mat-label{
+        font-size: 80%;
+    }
 }
 .profilesbtbtns{
     margin: 0% 8%;
@@ -66,7 +88,7 @@ mat-label{
     border: none;
     height: 33px;
     margin: 4% 2%;
-    width: 5rem;
+    width: 8rem;
 }
 @media(max-width:767px){
 .profileright{
@@ -85,14 +107,14 @@ mat-label{
     border: none;}
 
 .form-group input{
-    height: 50px;
+    height: 45px;
     margin-top: 3px;
 }
 .form-group{
-    height: 75px;
+    height: 70px;
 }
 .form-select {
-    height: 50px;
+    height: 45px;
     margin-top: 3px;
 }
 
