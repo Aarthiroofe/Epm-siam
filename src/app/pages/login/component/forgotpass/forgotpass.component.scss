@@ -7,14 +7,6 @@ margin: 0px;
     width: 100%;
     height: 100%;
 }
-.item_1{
-    text-align: center;
-}
-
-.leftimg{
-    width: 70%;
-    height: 70%;
-}
 .leftimg1{
     width: 90%;
     height: 90%;
@@ -39,7 +31,7 @@ margin: 0px;
 
     .Header img{
         height: 100%;
-        padding-bottom: 3rem;
+        padding-bottom: 2rem;
         width: 35%;
         }
 .right{
@@ -48,22 +40,20 @@ margin: 0px;
     justify-content: center;
     flex-direction: column;
 }
-.right h1{
+.right h2{
     color: rgb(190, 10, 10);
     font-weight: 500;
-    font-size: 38px;
+    font-size: 33px;
+}
+.content{
+    font-size: larger
+    ;
 }
 mat-form-field{width: 70%;
     margin-bottom: 25px;}
  mat-label{font-size: larger;padding-left:10px;}   
 .login{
     padding-top: 1rem;
-}
-.hint{
-    font-size: initial;
-    color:rgb(225 111 35);;
-    cursor: pointer;
-    margin-right: 15%;
 }
 .loginbtn{
     width: 70%;
@@ -73,6 +63,18 @@ mat-form-field{width: 70%;
     height: 3rem;
     border-radius: 11px;
     margin-top: 30px;
+}
+.my-icon{
+    cursor: pointer;
+}
+.errormsg{
+       position: relative;
+    top: -46px;
+    left: 18%;
+}
+.errormsg h3 {
+    position: absolute;
+    font-size: small;
 }
 :host ::ng-deep .mat-form-field-outline-start {
     border-radius: 15px 0 0 15px !important;
@@ -90,6 +92,9 @@ mat-form-field{width: 70%;
     font-weight: 400;
     color: #4c4a4a;
 }
+.passchanged h2{
+    color:rgb(225 111 35); cursor: pointer;
+}
 .passchanged p{
 font-size: xx-large;
 line-height: 2rem;
@@ -99,4 +104,8 @@ line-height: 2rem;
     width: 90px;
     border-radius: 50px;
 }
-
+@media screen and (max-width:767px){
+    .left{
+        display: none;
+    }
+}

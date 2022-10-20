@@ -32,8 +32,6 @@ export class EmployeListComponent implements OnInit {
   constructor(private router: Router,public dialog: MatDialog) { }
 
   ngOnInit(): void {
-    // this.dataSource.sort = this.matSort;
-    // this.changeSortedColumn();
   }
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;

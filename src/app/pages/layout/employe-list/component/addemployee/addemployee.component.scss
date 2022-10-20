@@ -43,7 +43,6 @@ mat-icon{margin-bottom: -6px;}
     padding: 20px;
     width: 90%;
     margin: 2%;
-    height: 78%;
 }
 .positionleft{
     border: 1px solid #e6d4d4;
@@ -51,6 +50,13 @@ mat-icon{margin-bottom: -6px;}
     padding: 20px;
     width: 90%;
     margin: 2% 2% 2% 4%;
+}
+.statusright{
+    border: 1px solid #e6d4d4;
+    border-radius: 5px;
+    padding: 20px;
+    width: 90%;
+    margin: 2%;
 }
 .full{
     padding: 0px 12px;

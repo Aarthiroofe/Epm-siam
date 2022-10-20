@@ -6,32 +6,32 @@
         <h2>Details</h2>
     </div>
     <div>
-    <mat-horizontal-stepper labelPosition="bottom" #stepper>
+    <mat-horizontal-stepper labelPosition="bottom" #stepper  [selectedIndex]="stepindex">
         <ng-template matStepperIcon="edit"> <mat-icon>done</mat-icon> </ng-template>
-            <mat-step   editable="true">
+            <mat-step   >
                 <form [formGroup]="profile">
                     <ng-template  matStepLabel >Profile</ng-template>
                     <div class="row">
                         <div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12 ">
                             <div class="profileleft">
                                 <div class="row full" >
-                                    <div class="col-12 col-xl-2 col-lg-2 col-md-2 col-sm-12 name"  >
+                                    <div class="col-12 col-xl-2 col-lg-2 col-md-2 col-sm-12 name" >
                                         <div class="form-group">
                                             <mat-label>Prefix</mat-label>
-                                            <select class="form-select" formControlName="prefix" required >
+                                            <select class="form-select" formControlName="prefix" >
                                                 <option value="Mr">Mr</option>
-                                                <option value="option">Ms</option>
-                                                <option value="option">Mrs</option>
-                                                <option value="option">Dr</option>
-                                                <option value="option">Prof</option>
-                                            </select>
+                                                <option value="Ms">Ms</option>
+                                                <option value="Mrs">Mrs</option>
+                                                <option value="Dr">Dr</option>
+                                                <option value="Prof">Prof</option>
+                                            </select>   
                                         </div>
                                       
                                     </div>
                                     <div class="col-12 col-xl-4 col-lg-4 col-md-4 col-sm-12 name">
                                         <div class="form-group"> 
                                             <mat-label>Full Name</mat-label>
-                                            <input type="name" class="form-control" formControlName="first_name"  placeholder="" required>
+                                            <input type="name" class="form-control" formControlName="first_name"  placeholder="">
                                             <small class="text-danger"
                                                 *ngIf="profile.controls['first_name'].touched && profile.controls['first_name'].invalid">
                                                 <i class="bi bi-exclamation-circle"></i>
@@ -39,11 +39,10 @@
                                             </small>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-xl-3 col-lg-3 col-md-3 col-sm-12 name" >
+                                    <div class="col-12 col-xl-3 col-lg-3 col-md-3 col-sm-12 name">
                                         <div class="form-group">
                                             <mat-label>Middle Name</mat-label>
-                                            <input type="name" class="form-control" formControlName="middle_name"placeholder="" required>
-                                                
+                                            <input type="name" class="form-control" formControlName="middle_name" placeholder="">
                                             <small class="text-danger"
                                                 *ngIf="profile.controls['middle_name'].touched && profile.controls['middle_name'].invalid">
                                                 <i class="bi bi-exclamation-circle"></i>
@@ -105,8 +104,9 @@
                                         <mat-label>Gender</mat-label>
                                         <div class="form-group">
                                             <select class="form-select" formControlName="gender">
-                                                <option value="option">Male</option>
-                                                <option value="option">Female</option>
+                                                <option value="MALE">Male</option>
+                                                <option value="FEMALE">Female</option>
+                                                <option value="OTHER">Female</option>
                                             </select>
                                             <small class="text-danger"
                                                 *ngIf="profile.controls['gender'].touched && profile.controls['gender'].invalid">
@@ -119,12 +119,15 @@
                                         <mat-label>Blood Group</mat-label>
                                         <div class="form-group">
                                             <select class="form-select" formControlName="blood_group">
-                                                <option value="option">A+ Ve</option>
-                                                <option value="option">A- Ve</option>
-                                                <option value="option">B+ Ve</option>
-                                                <option value="option">B- Ve</option>
-                                                <option value="option">O+ Ve</option>
-                                                <option value="option">O- Ve</option>
+                                                <option value="A+">A+ Ve</option>
+                                                <option value="A-">A- Ve</option>
+                                                <option value="B+">B+ Ve</option>
+                                                <option value="B-">B- Ve</option>
+                                                <option value="AB+">AB+ Ve</option>
+                                                <option value="AB-">AB- Ve</option>
+                                                <option value="O+">O+ Ve</option>
+                                                <option value="O-">O+ Ve</option>
+
                                             </select>
                                             <small class="text-danger"
                                                 *ngIf="profile.controls['blood_group'].touched && profile.controls['blood_group'].invalid">
@@ -134,12 +137,23 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div>
+                                <!-- <div>
                                     <mat-label>Address</mat-label>
                                     <div class="form-group">
                                         <input type="num" formControlName="Address" class="form-control" placeholder="">
                                         <small class="text-danger"
                                             *ngIf="profile.controls['Address'].touched && profile.controls['Address'].invalid">
+                                            <i class="bi bi-exclamation-circle"></i>
+                                            This field is required
+                                        </small>
+                                    </div>
+                                </div> -->
+                                 <div>
+                                    <mat-label>Nationality</mat-label>
+                                    <div class="form-group">
+                                        <input type="num" formControlName="nationality" class="form-control" placeholder="">
+                                        <small class="text-danger"
+                                            *ngIf="profile.controls['nationality'].touched && profile.controls['nationality'].invalid">
                                             <i class="bi bi-exclamation-circle"></i>
                                             This field is required
                                         </small>
@@ -164,8 +178,11 @@
                                 <div>
                                     <mat-label>Skilled type</mat-label>
                                     <div class="form-group">
-                                        <input type="text" formControlName="skilled_type" class="form-control"
+                                        <select type="text" formControlName="skilled_type" class="form-control"
                                             placeholder="">
+                                            <option value="SKILLED">Skilled</option>
+                                            <option value="SEMI-SKILLED">Semi-Skilled</option>
+                                        </select>
                                         <small class="text-danger"
                                             *ngIf="profile.controls['skilled_type'].touched && profile.controls['skilled_type'].invalid">
                                             <i class="bi bi-exclamation-circle"></i>
@@ -195,14 +212,14 @@
                                 <button mat-raised-button class="btn1" style="color:grey;background-color: none;"
                                     (click)="stepper.reset()">Cancel</button>
                                 <button mat-raised-button class="btn1" style="color:white;background-color:red"
-                                   (click)="profiledata()" >Save&Continue</button>
+                                   (click)="profiledata()"  >Save&Continue</button>
                             </div>
                         </div>
                     </div>
 
                 </form>
             </mat-step>
-            <mat-step  optional>
+            <mat-step  >
                 <form [formGroup]="Status">
                     <ng-template matStepLabel  >Status</ng-template>
                     <div class="row">
@@ -238,15 +255,15 @@
                             </div>
                         </div>
                         <div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                            <div class="profileright">
+                            <div class="statusright">
                                 <mat-label>Employement type</mat-label>
                                 <div class="form-group">
                                     <select class="form-select" formControlName="employment_type">
-                                        <option value="option">Intern</option>
-                                        <option value="option"> Consultant </option>
-                                        <option value="option">Permanent</option>
-                                        <option value="option">Trainee</option>
-                                        <option value="option">Contractual</option>
+                                        <option value="INTERN">Intern</option>
+                                        <option value="CONSULTANT"> Consultant </option>
+                                        <option value="PERMANENT">Permanent</option>
+                                        <option value="TRAINEE">Trainee</option>
+                                        <option value="CONTRACTUAL">Contractual</option>
                                     </select>
                                     <small class="text-danger"
                                         *ngIf="Status.controls['employment_type'].touched && Status.controls['employment_type'].invalid">
@@ -258,11 +275,10 @@
                                 <mat-label>Employement status</mat-label>
                                 <div class="form-group">
                                     <select class="form-select" formControlName="employment_status">
-                                        <option value="option">Probation</option>
-                                        <option value="option">Confirmed</option>
-                                        <option value="option">Settled</option>
-                                        <option value="option">Relieved</option>
-                                        <option value="option">Resigned</option>
+                                        <option value=" PROBATION">Probation</option>
+                                        <option value="CONFIRMED">Confirmed</option>
+                                        <option value="SETTLED">Settled</option>
+                                        <option value="RESIGNED">Resigned</option>
                                     </select>
                                     <small class="text-danger"
                                         *ngIf="Status.controls['employment_status'].touched && Status.controls['employment_status'].invalid">
@@ -270,18 +286,27 @@
                                         This field is required
                                     </small>
                                 </div>
+                                <mat-label>Reliving Date</mat-label>
+                                <div class="form-group">
+                                    <input type="date" class="form-control" formControlName="relieving_date" placeholder="MM/DD/YYYY">
+                                    <small class="text-danger"
+                                        *ngIf="Status.controls['relieving_date'].touched && Status.controls['relieving_date'].invalid">
+                                        <i class="bi bi-exclamation-circle"></i>
+                                        This field is required
+                                    </small>
+                                </div>
                             </div>
-                            <div class="profilesbtbtns">
+                            <div class="profilesbtbtns">    
                                 <button mat-raised-button class="btn1" style="color:grey;background-color: none;"
                                     (click)="stepper.reset()" matStepperPrevious>Back</button>
                                 <button mat-raised-button class="btn1" style="color:white;background-color:red"
-                                    matStepperNext>Save&Continue    </button>
+                                  (click)="statusdata()" >Save&Continue    </button>
                             </div>
                         </div>
                     </div>
                 </form>
             </mat-step>
-            <mat-step optional>
+            <mat-step >
                 <form [formGroup]="Position">
                     <ng-template matStepLabel  >Position</ng-template>
                     <div class="row">
@@ -298,10 +323,7 @@
                                 </div>
                                 <mat-label>Department</mat-label>
                                 <div class="form-group">
-                                    <select class="form-select" formControlName="department">
-                                        <option value="option">Probation</option>
-
-                                    </select>
+                                    <input type="text" formControlName="department" class="form-control" placeholder="">
                                     <small class="text-danger"
                                         *ngIf="Position.controls['department'].touched && Position.controls['department'].invalid">
                                         <i class="bi bi-exclamation-circle"></i>
@@ -310,9 +332,7 @@
                                 </div>
                                 <mat-label>Sub department</mat-label>
                                 <div class="form-group">
-                                    <select class="form-select" formControlName="sub_department">
-                                        <option value="option">Probation</option>
-                                    </select>
+                                    <input type="text" formControlName="sub_department" class="form-control" placeholder="">
                                     <small class="text-danger"
                                         *ngIf="Position.controls['sub_department'].touched && Position.controls['sub_department'].invalid">
                                         <i class="bi bi-exclamation-circle"></i>
@@ -321,9 +341,7 @@
                                 </div>
                                 <mat-label>Designation</mat-label>
                                 <div class="form-group">
-                                    <select class="form-select" formControlName="designation">
-                                        <option value="option">Probation</option>
-                                    </select>
+                                    <input type="text" formControlName="designation" class="form-control" placeholder="">
                                     <small class="text-danger"
                                         *ngIf="Position.controls['designation'].touched && Position.controls['designation'].invalid">
                                         <i class="bi bi-exclamation-circle"></i>
@@ -332,9 +350,7 @@
                                 </div>
                                 <mat-label>Region</mat-label>
                                 <div class="form-group">
-                                    <select class="form-select" formControlName="region">
-                                        <option value="option">Probation</option>
-                                    </select>
+                                    <input type="text" formControlName="region" class="form-control" placeholder="">
                                     <small class="text-danger"
                                         *ngIf="Position.controls['region'].touched && Position.controls['region'].invalid">
                                         <i class="bi bi-exclamation-circle"></i>
@@ -343,9 +359,7 @@
                                 </div>
                                 <mat-label>Level</mat-label>
                                 <div class="form-group">
-                                    <select class="form-select" formControlName="level">
-                                        <option value="option">Probation</option>
-                                    </select>
+                                    <input type="text" formControlName="level" class="form-control" placeholder="">
                                     <small class="text-danger"
                                         *ngIf="Position.controls['level'].touched && Position.controls['level'].invalid">
                                         <i class="bi bi-exclamation-circle"></i>
@@ -359,9 +373,7 @@
                             <div class="positionright">
                                 <mat-label>Report manager</mat-label>
                                 <div class="form-group">
-                                    <select class="form-select" formControlName="reporting_manager">
-                                        <option value="option">Report manager</option>
-                                    </select>
+                                    <input type="text" formControlName="reporting_manager" class="form-control" placeholder="">
                                     <small class="text-danger"
                                         *ngIf="Position.controls['reporting_manager'].touched && Position.controls['reporting_manager'].invalid">
                                         <i class="bi bi-exclamation-circle"></i>
@@ -370,9 +382,7 @@
                                 </div>
                                 <mat-label>Functional manager</mat-label>
                                 <div class="form-group">
-                                    <select class="form-select" formControlName="functional_manager">
-                                        <option value="option">Functional manager</option>
-                                    </select>
+                                    <input type="text" formControlName="functional_manager" class="form-control" placeholder="">
                                     <small class="text-danger"
                                         *ngIf="Position.controls['functional_manager'].touched && Position.controls['functional_manager'].invalid">
                                         <i class="bi bi-exclamation-circle"></i>
@@ -381,9 +391,7 @@
                                 </div>
                                 <mat-label>Branch</mat-label>
                                 <div class="form-group">
-                                    <select class="form-select" formControlName="branch">
-                                        <option value="option">Branch</option>
-                                    </select>
+                                    <input type="text" formControlName="branch" class="form-control" placeholder="">
                                     <small class="text-danger"
                                         *ngIf="Position.controls['branch'].touched && Position.controls['branch'].invalid">
                                         <i class="bi bi-exclamation-circle"></i>
@@ -392,9 +400,7 @@
                                 </div>
                                 <mat-label>Sub branch</mat-label>
                                 <div class="form-group">
-                                    <select class="form-select" formControlName="sub_branch">
-                                        <option value="option">Sub branch</option>
-                                    </select>
+                                    <input type="text" formControlName="sub_branch" class="form-control" placeholder="">
                                     <small class="text-danger"
                                         *ngIf="Position.controls['sub_branch'].touched && Position.controls['sub_branch'].invalid">
                                         <i class="bi bi-exclamation-circle"></i>
@@ -403,11 +409,18 @@
                                 </div>
                                 <mat-label>Grade</mat-label>
                                 <div class="form-group">
-                                    <select class="form-select" formControlName="grade">
-                                        <option value="option">Grade</option>
-                                    </select>
+                                    <input type="text" formControlName="grade" class="form-control" placeholder="">
                                     <small class="text-danger"
                                         *ngIf="Position.controls['grade'].touched && Position.controls['grade'].invalid">
+                                        <i class="bi bi-exclamation-circle"></i>
+                                        This field is required
+                                    </small>
+                                </div>
+                                <mat-label>Business Unit</mat-label>
+                                <div class="form-group">
+                                    <input type="text" formControlName="business_unit" class="form-control" placeholder="">
+                                    <small class="text-danger"
+                                        *ngIf="Position.controls['business_unit'].touched && Position.controls['business_unit'].invalid">
                                         <i class="bi bi-exclamation-circle"></i>
                                         This field is required
                                     </small>
@@ -418,14 +431,14 @@
                                 <button mat-raised-button class="btn1" style="color:grey;background-color: none;"
                                     (click)="stepper.reset()"matStepperPrevious>Back</button>
                                 <button mat-raised-button class="btn1" style="color:white;background-color:red"
-                                    matStepperNext>Save&Continue</button>
+                                     (click)="positiondata()" >Save&Continue</button>
                             </div>
                         </div>
                     </div>
 
                 </form>
             </mat-step>
-            <mat-step  optional>
+            <mat-step  >
                 <form [formGroup]="Document">
                     <ng-template matStepLabel  >Document</ng-template>
                     <div style="text-align:right ;">
@@ -442,8 +455,8 @@
                                 <img src="../../../../assets/images/pdfbig.png">
                                 <p><img src="../../../../assets/images/pdfsmall.png">&nbsp; Adhar Card</p>
                             </div>
-                               <input type="file" id="file" >
-                               <label for="file"><img src="../../../../assets/images/upimg.png">&nbsp; Upload</label>
+                               <input type="file" id="file" formControlName="adhar" >
+                                <label for="file"  (change)="docupload($event)" ><img src="../../../../assets/images/upimg.png">&nbsp; Upload</label>
                         </div>
 
                         <div class="col-12 col-xl-2 col-lg-2 col-md-3 col-sm-4 doc">
@@ -455,7 +468,7 @@
                                 <p><img src="../../../../assets/images/pdfsmall.png">&nbsp;PAN Card</p>
                             </div>
                             <input type="file" id="file" >
-                               <label for="file"><img src="../../../../assets/images/upimg.png">&nbsp; Upload</label>
+                                <label for="file"  (change)="docupload($event)"  ><img src="../../../../assets/images/upimg.png">&nbsp; Upload</label>
                         </div>
 
                         <div class="col-12 col-xl-2 col-lg-2 col-md-3 col-sm-4 doc">
@@ -467,7 +480,7 @@
                                 <p><img src="../../../../assets/images/pdfsmall.png">&nbsp; Educational Certificate</p>
                             </div>
                             <input type="file" id="file" >
-                               <label for="file"><img src="../../../../assets/images/upimg.png">&nbsp; Upload</label>
+                                <label for="file"  (change)="docupload($event)"  ><img src="../../../../assets/images/upimg.png">&nbsp; Upload</label>
                         </div>
 
                         <div class="col-12 col-xl-2 col-lg-2 col-md-3 col-sm-4 doc">
@@ -479,7 +492,7 @@
                                 <p><img src="../../../../assets/images/pdfsmall.png">&nbsp; photo</p>
                             </div>
                             <input type="file" id="file" >
-                               <label for="file"><img src="../../../../assets/images/upimg.png">&nbsp; Upload</label>
+                                <label for="file"  (change)="docupload($event)"  ><img src="../../../../assets/images/upimg.png">&nbsp; Upload</label>
                         </div>
 
                         <div class="col-12 col-xl-2 col-lg-2 col-md-3 col-sm-4 doc">
@@ -491,7 +504,7 @@
                                 <p><img src="../../../../assets/images/pdfsmall.png">&nbsp; Address proof</p>
                             </div>
                             <input type="file" id="file" >
-                               <label for="file"><img src="../../../../assets/images/upimg.png">&nbsp; Upload</label>
+                                <label for="file"  (change)="docupload($event)"  ><img src="../../../../assets/images/upimg.png">&nbsp; Upload</label>
                         </div>
 
                         <div class="col-12 col-xl-2 col-lg-2 col-md-3 col-sm-4 doc">
@@ -504,7 +517,7 @@
                                 </p>
                             </div>
                             <input type="file" id="file" >
-                               <label for="file"><img src="../../../../assets/images/upimg.png">&nbsp; Upload</label>
+                                <label for="file"  (change)="docupload($event)"  ><img src="../../../../assets/images/upimg.png">&nbsp; Upload</label>
                         </div>
 
                         <div class="col-12 col-xl-2 col-lg-2 col-md-3 col-sm-4 doc">
@@ -516,7 +529,7 @@
                                 <p><img src="../../../../assets/images/pdfsmall.png">&nbsp; Pay slips</p>
                             </div>
                             <input type="file" id="file" >
-                               <label for="file"><img src="../../../../assets/images/upimg.png">&nbsp; Upload</label>
+                                <label for="file"  (change)="docupload($event)"  ><img src="../../../../assets/images/upimg.png">&nbsp; Upload</label>
                         </div>
 
                         <div class="col-12 col-xl-2 col-lg-2 col-md-3 col-sm-4 doc">
@@ -528,7 +541,7 @@
                                 <p><img src="../../../../assets/images/pdfsmall.png">&nbsp; Bank Statemets</p>
                             </div>
                             <input type="file" id="file" >
-                               <label for="file"><img src="../../../../assets/images/upimg.png">&nbsp; Upload</label>
+                                <label for="file"  (change)="docupload($event)"  ><img src="../../../../assets/images/upimg.png">&nbsp; Upload</label>
 
                         </div>
                         <div class="col-12 col-xl-2 col-lg-2 col-md-3 col-sm-4 doc">
@@ -540,7 +553,7 @@
                                 <p><img src="../../../../assets/images/pdfsmall.png">&nbsp; Resume</p>
                             </div>
                             <input type="file" id="file" >
-                               <label for="file"><img src="../../../../assets/images/upimg.png">&nbsp; Upload</label>
+                                <label for="file"  (change)="docupload($event)"  ><img src="../../../../assets/images/upimg.png">&nbsp; Upload</label>
                         </div>
 
                         <div class="col-12 col-xl-2 col-lg-2 col-md-3 col-sm-4 doc">
@@ -552,7 +565,7 @@
                                 <p><img src="../../../../assets/images/pdfsmall.png">&nbsp; KYC</p>
                             </div>
                             <input type="file" id="file" >
-                               <label for="file"><img src="../../../../assets/images/upimg.png">&nbsp; Upload</label>
+                                <label for="file"  (change)="docupload($event)"  ><img src="../../../../assets/images/upimg.png">&nbsp; Upload</label>
                         </div>
 
                         <div class="col-12 col-xl-2 col-lg-2 col-md-3 col-sm-4 doc">
@@ -564,7 +577,7 @@
                                 <p><img src="../../../../assets/images/pdfsmall.png">&nbsp; Appointment acceptance</p>
                             </div>
                             <input type="file" id="file" >
-                               <label for="file"><img src="../../../../assets/images/upimg.png">&nbsp; Upload</label>
+                               <label for="file"  (change)="docupload($event)"  ><img src="../../../../assets/images/upimg.png">&nbsp; Upload</label>
                         </div>
                     </div>
                     <div>

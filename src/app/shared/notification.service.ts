@@ -24,7 +24,7 @@ export class NotificationService {
   openSnackBar(mes: any) {
     this.snake.open(mes, 'Ok',
       {
-        verticalPosition:'top',
+        verticalPosition:'bottom',
         horizontalPosition :'end',
         duration: 3000
       });
